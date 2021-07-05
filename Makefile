@@ -11,7 +11,7 @@ win:
 	cmd.exe /c "mkdirs.cmd"
 	cd alib && $(MAKE) win
 	cd csvfix && $(MAKE) win
-	cd csvfix\bin; gzip csvfix.exe -c > csvfix.win64.gz
+	cd csvfix/bin; gzip csvfix.exe -c > csvfix.win64.gz
 
 lin:
 	mkdir -p alib/obj alib/lib csvfix/obj csvfix/bin

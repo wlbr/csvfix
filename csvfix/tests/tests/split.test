@@ -1,0 +1,4 @@
+$CSVED split_fixed -f 1 -p 1:4,5:1 data/emp.csv
+$CSVED split_char -f 2 data/emp.csv
+$CSVED split_char -f 2 data/emp.csv
+$CSVED split_char -f 1 -c '::' data/classmem.csv

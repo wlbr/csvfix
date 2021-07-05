@@ -1,0 +1,5 @@
+# test sql insert generation
+$CSVED sql_insert -t people -f 1:forename,2:surname  data/names.csv 
+$CSVED sql_insert -t stuff -f 1:name,2:value  data/sqlnull.csv 
+$CSVED sql_insert -t stuff -f 1:name,2:value -qn data/sqlnull.csv 
+$CSVED sql_insert -en -t stuff -f 1:name,2:value  data/sql_ef.csv 

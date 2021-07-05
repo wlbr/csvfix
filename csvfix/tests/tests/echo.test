@@ -1,0 +1,4 @@
+$CSVED echo data/names.csv
+$CSVED echo data/names.csv - data/cities.csv < data/countries.csv
+$CSVED echo -sep ';' data/names_scs.csv
+$CSVED echo -sep ';' -osep '=' data/names_scs.csv

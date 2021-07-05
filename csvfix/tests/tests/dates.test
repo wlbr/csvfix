@@ -1,0 +1,5 @@
+$CSVED date_iso -m d/m/y -f 2 data/dates.csv
+$CSVED date_iso -m d/m/y -f 2 -bdx data/dates.csv
+$CSVED date_iso -m d/m/y -f 2 -bdl data/dates.csv
+$CSVED date_iso -m d/m/y -f 2 data/birthdays.csv | $CSVED date_format -f 2 -fmt 'dd-mmm-yyyy'
+

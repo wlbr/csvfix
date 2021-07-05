@@ -1,0 +1,3 @@
+# test fixed format input
+$CSVED read_fixed -f 1:4,7:2  data/fixed.dat 
+$CSVED write_fixed -f 1:32,2:1  data/names.csv

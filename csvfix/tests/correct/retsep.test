@@ -1,0 +1,14 @@
+"Charles";"Dickens";"M"
+"Jane";"Austen";"F"
+"Herman";"Melville";"M"
+"Flann";"O'Brien";"M"
+"George";"Elliot";"F"
+"Virginia";"Woolf";"F"
+"Oscar";"Wilde";"M"
+Charles;Dickens,Mr;M
+Jane;Austen,Miss;F
+Herman;Melville,Mr;M
+Flann;O'Brien,Mr;M
+George;Elliot,???;F
+Virginia;Woolf,Mrs;F
+Oscar;Wilde,Mr;M

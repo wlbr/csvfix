@@ -1,0 +1,48 @@
+#!bash
+# runsrc
+# run test(s) associated with a single source file
+# copyright (C) 2008 Neil Butterworth
+
+#set -x
+
+error()
+{
+	echo "Error: $*"
+	exit 1
+}
+
+if [ "$1" = "" ]
+then
+	error "No source file specified"
+fi
+
+MAP=tests/src2test
+AFILE=`echo $1 | sed -e 's/\\\\/\//g'`
+SRC=`basename $AFILE`
+MAPFILE="$MAP/$SRC.test"
+
+if [ ! -f "$MAPFILE" ]
+then
+	error "No source to test map file $MAPFILE found"
+fi
+
+echo "Running all tests for ${SRC}..."
+echo ""
+
+TOTAL=0
+PASSES=0
+FAILS=0
+
+for atest in $( cat $MAPFILE )
+do
+	if bash ./run1 $atest
+	then
+		let PASSES=PASSES+1
+	else
+		let FAILS=FAILS+1
+	fi
+done
+
+echo ""
+echo $FAILS failed, $PASSES passed
+echo ""

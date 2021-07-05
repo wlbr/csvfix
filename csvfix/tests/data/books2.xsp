@@ -1,0 +1,8 @@
+tag characters
+	tag author group 1,2 attrib forename 2 attrib surname 1
+		tag book group 3 attrib title 3
+			tag character group 4
+				tag name
+					text 4
+				tag description
+					text 5

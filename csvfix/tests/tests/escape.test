@@ -1,0 +1,4 @@
+# test escape command
+$CSVED escape -sql  data/names.csv 
+$CSVED escape -s lynn  data/names.csv 
+$CSVED escape -s lynn -f 2  data/names.csv 

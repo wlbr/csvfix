@@ -1,0 +1,4 @@
+# test escape command
+$CSVED sort -f 3,1  data/names.csv 
+$CSVED sort -f 1:DS  data/names.csv 
+$CSVED sort -rh  data/names_head.csv 

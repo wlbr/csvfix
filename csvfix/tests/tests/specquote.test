@@ -1,0 +1,1 @@
+$CSVED order -f 1,2,3 -sqf 2,3 data/names.csv

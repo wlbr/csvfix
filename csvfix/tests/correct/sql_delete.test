@@ -1,0 +1,18 @@
+DELETE FROM people WHERE forename = 'Charles' AND surname = 'Dickens'
+;
+DELETE FROM people WHERE forename = 'Jane' AND surname = 'Austen'
+;
+DELETE FROM people WHERE forename = 'Herman' AND surname = 'Melville'
+;
+DELETE FROM people WHERE forename = 'Flann' AND surname = 'O''Brien'
+;
+DELETE FROM people WHERE forename = 'George' AND surname = 'Elliot'
+;
+DELETE FROM people WHERE forename = 'Virginia' AND surname = 'Woolf'
+;
+DELETE FROM people WHERE forename = 'Oscar' AND surname = 'Wilde'
+;
+DELETE FROM dummy WHERE one = '1' AND two IS NULL
+;
+DELETE FROM dummy WHERE one IS NULL AND two IS NULL
+;

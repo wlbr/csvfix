@@ -1,0 +1,34 @@
+INSERT INTO people ( forename, surname ) VALUES( 'Charles', 'Dickens')
+;
+INSERT INTO people ( forename, surname ) VALUES( 'Jane', 'Austen')
+;
+INSERT INTO people ( forename, surname ) VALUES( 'Herman', 'Melville')
+;
+INSERT INTO people ( forename, surname ) VALUES( 'Flann', 'O''Brien')
+;
+INSERT INTO people ( forename, surname ) VALUES( 'George', 'Elliot')
+;
+INSERT INTO people ( forename, surname ) VALUES( 'Virginia', 'Woolf')
+;
+INSERT INTO people ( forename, surname ) VALUES( 'Oscar', 'Wilde')
+;
+INSERT INTO stuff ( name, value ) VALUES( 'this is one', '1')
+;
+INSERT INTO stuff ( name, value ) VALUES( 'this is null', null)
+;
+INSERT INTO stuff ( name, value ) VALUES( 'so is this', NULL)
+;
+INSERT INTO stuff ( name, value ) VALUES( 'this is two', '2')
+;
+INSERT INTO stuff ( name, value ) VALUES( 'this is one', '1')
+;
+INSERT INTO stuff ( name, value ) VALUES( 'this is null', 'null')
+;
+INSERT INTO stuff ( name, value ) VALUES( 'so is this', 'NULL')
+;
+INSERT INTO stuff ( name, value ) VALUES( 'this is two', '2')
+;
+INSERT INTO stuff ( name, value ) VALUES( '1', NULL)
+;
+INSERT INTO stuff ( name, value ) VALUES( NULL, NULL)
+;

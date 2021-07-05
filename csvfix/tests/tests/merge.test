@@ -1,0 +1,5 @@
+$CSVED merge -f 1,2 data/names.csv
+$CSVED merge -f 2,3 data/names.csv
+$CSVED merge -f 2,3 -p 1 data/names.csv
+$CSVED merge -f 1,2,3 -s ':' data/names.csv
+$CSVED merge data/names.csv

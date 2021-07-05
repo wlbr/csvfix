@@ -1,0 +1,4 @@
+$CSVED inter  data/names.csv data/dates.csv
+$CSVED inter  -f L1,R2,L3 data/names.csv data/dates.csv
+$CSVED inter  -f l1,r2,L3 data/names.csv data/dates.csv
+$CSVED inter  -f l1,r2,L3,R1000,L1000 data/names.csv data/dates.csv

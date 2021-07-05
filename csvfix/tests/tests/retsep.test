@@ -1,0 +1,2 @@
+$CSVED order -f 1,2,3 -rsep ';' data/names_sc.csv
+$CSVED echo -rsep ';' -smq data/names_sc2.csv

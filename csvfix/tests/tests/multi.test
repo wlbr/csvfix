@@ -1,0 +1,1 @@
+$CSVED read_multi  -s '%' data/multiline.txt

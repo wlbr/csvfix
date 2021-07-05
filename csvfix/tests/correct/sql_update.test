@@ -1,0 +1,18 @@
+UPDATE people SET forename = 'Charles', surname = 'Dickens' WHERE forename = 'Charles'
+;
+UPDATE people SET forename = 'Jane', surname = 'Austen' WHERE forename = 'Jane'
+;
+UPDATE people SET forename = 'Herman', surname = 'Melville' WHERE forename = 'Herman'
+;
+UPDATE people SET forename = 'Flann', surname = 'O''Brien' WHERE forename = 'Flann'
+;
+UPDATE people SET forename = 'George', surname = 'Elliot' WHERE forename = 'George'
+;
+UPDATE people SET forename = 'Virginia', surname = 'Woolf' WHERE forename = 'Virginia'
+;
+UPDATE people SET forename = 'Oscar', surname = 'Wilde' WHERE forename = 'Oscar'
+;
+UPDATE stuff SET one = '1', two = NULL WHERE one = '1'
+;
+UPDATE stuff SET one = NULL, two = NULL WHERE one IS NULL
+;

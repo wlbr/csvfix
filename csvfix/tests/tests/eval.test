@@ -1,0 +1,6 @@
+$CSVED eval -e '($1 + $2)/2' data/numbers.csv
+$CSVED eval -e 'if(match($2,"^G"),$1,"Ignore")' data/cities.csv
+$CSVED eval -r 1,'if(match($2,"^G"),$1,"Ignore")' data/cities.csv
+$CSVED eval -e '($1 - $2)/2' data/numbers.csv
+$CSVED eval -d -e '($1 - $2)/2' data/numbers.csv
+$CSVED eval -d -if '$1<3' -e '"too small"' -e '($1 - $2)/2' data/numbers.csv

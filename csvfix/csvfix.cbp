@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="csvfix" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/csvfix" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters=" summary -siz tests/data/army.csv" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/csvfix" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-std=c++11" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-std=c++0x" />
+			<Add option="-Wextra" />
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add directory="inc" />
+			<Add directory="../alib/inc" />
+		</Compiler>
+		<Linker>
+			<Add library="..\alib\lib\alib.a" />
+			<Add library="libodbc32.a" />
+		</Linker>
+		<Unit filename="../alib/inc/_template.h" />
+		<Unit filename="../alib/inc/a_assert.h" />
+		<Unit filename="../alib/inc/a_base.h" />
+		<Unit filename="../alib/inc/a_chsrc.h" />
+		<Unit filename="../alib/inc/a_collect.h" />
+		<Unit filename="../alib/inc/a_csv.h" />
+		<Unit filename="../alib/inc/a_date.h" />
+		<Unit filename="../alib/inc/a_db.h" />
+		<Unit filename="../alib/inc/a_dict.h" />
+		<Unit filename="../alib/inc/a_enc.h" />
+		<Unit filename="../alib/inc/a_env.h" />
+		<Unit filename="../alib/inc/a_except.h" />
+		<Unit filename="../alib/inc/a_exec.h" />
+		<Unit filename="../alib/inc/a_expr.h" />
+		<Unit filename="../alib/inc/a_file.h" />
+		<Unit filename="../alib/inc/a_html.h" />
+		<Unit filename="../alib/inc/a_myth.h" />
+		<Unit filename="../alib/inc/a_nameval.h" />
+		<Unit filename="../alib/inc/a_rand.h" />
+		<Unit filename="../alib/inc/a_regex.h" />
+		<Unit filename="../alib/inc/a_shstr.h" />
+		<Unit filename="../alib/inc/a_slice.h" />
+		<Unit filename="../alib/inc/a_sort.h" />
+		<Unit filename="../alib/inc/a_str.h" />
+		<Unit filename="../alib/inc/a_table.h" />
+		<Unit filename="../alib/inc/a_time.h" />
+		<Unit filename="../alib/inc/a_valptr.h" />
+		<Unit filename="../alib/inc/a_xmlevents.h" />
+		<Unit filename="../alib/inc/a_xmlparser.h" />
+		<Unit filename="../alib/inc/a_xmltree.h" />
+		<Unit filename="csvfix.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="inc/csved_atable.h" />
+		<Unit filename="inc/csved_block.h" />
+		<Unit filename="inc/csved_call.h" />
+		<Unit filename="inc/csved_case.h" />
+		<Unit filename="inc/csved_check.h" />
+		<Unit filename="inc/csved_cli.h" />
+		<Unit filename="inc/csved_command.h" />
+		<Unit filename="inc/csved_config.h" />
+		<Unit filename="inc/csved_date.h" />
+		<Unit filename="inc/csved_diff.h" />
+		<Unit filename="inc/csved_dsv.h" />
+		<Unit filename="inc/csved_echo.h" />
+		<Unit filename="inc/csved_edit.h" />
+		<Unit filename="inc/csved_escape.h" />
+		<Unit filename="inc/csved_eval.h" />
+		<Unit filename="inc/csved_evalvars.h" />
+		<Unit filename="inc/csved_except.h" />
+		<Unit filename="inc/csved_exclude.h" />
+		<Unit filename="inc/csved_exec.h" />
+		<Unit filename="inc/csved_fileinfo.h" />
+		<Unit filename="inc/csved_filesplit.h" />
+		<Unit filename="inc/csved_find.h" />
+		<Unit filename="inc/csved_fixed.h" />
+		<Unit filename="inc/csved_flatten.h" />
+		<Unit filename="inc/csved_fmerge.h" />
+		<Unit filename="inc/csved_fromxml.h" />
+		<Unit filename="inc/csved_headtail.h" />
+		<Unit filename="inc/csved_inter.h" />
+		<Unit filename="inc/csved_ioman.h" />
+		<Unit filename="inc/csved_join.h" />
+		<Unit filename="inc/csved_map.h" />
+		<Unit filename="inc/csved_merge.h" />
+		<Unit filename="inc/csved_money.h" />
+		<Unit filename="inc/csved_number.h" />
+		<Unit filename="inc/csved_odbc.h" />
+		<Unit filename="inc/csved_order.h" />
+		<Unit filename="inc/csved_printf.h" />
+		<Unit filename="inc/csved_put.h" />
+		<Unit filename="inc/csved_readmulti.h" />
+		<Unit filename="inc/csved_rmnewline.h" />
+		<Unit filename="inc/csved_rules.h" />
+		<Unit filename="inc/csved_seq.h" />
+		<Unit filename="inc/csved_shuffle.h" />
+		<Unit filename="inc/csved_sort.h" />
+		<Unit filename="inc/csved_sparse.h" />
+		<Unit filename="inc/csved_split.h" />
+		<Unit filename="inc/csved_sql.h" />
+		<Unit filename="inc/csved_stat.h" />
+		<Unit filename="inc/csved_strings.h" />
+		<Unit filename="inc/csved_sum.h" />
+		<Unit filename="inc/csved_template.h" />
+		<Unit filename="inc/csved_timestamp.h" />
+		<Unit filename="inc/csved_toxml.h" />
+		<Unit filename="inc/csved_trim.h" />
+		<Unit filename="inc/csved_truncpad.h" />
+		<Unit filename="inc/csved_types.h" />
+		<Unit filename="inc/csved_unique.h" />
+		<Unit filename="inc/csved_util.h" />
+		<Unit filename="inc/csved_valid.h" />
+		<Unit filename="inc/csved_version.h" />
+		<Unit filename="inc/csved_writemulti.h" />
+		<Unit filename="src/csved_atable.cpp" />
+		<Unit filename="src/csved_block.cpp" />
+		<Unit filename="src/csved_call.cpp" />
+		<Unit filename="src/csved_case.cpp" />
+		<Unit filename="src/csved_check.cpp" />
+		<Unit filename="src/csved_cli.cpp" />
+		<Unit filename="src/csved_command.cpp" />
+		<Unit filename="src/csved_config.cpp" />
+		<Unit filename="src/csved_date.cpp" />
+		<Unit filename="src/csved_diff.cpp" />
+		<Unit filename="src/csved_dsv.cpp" />
+		<Unit filename="src/csved_echo.cpp" />
+		<Unit filename="src/csved_edit.cpp" />
+		<Unit filename="src/csved_escape.cpp" />
+		<Unit filename="src/csved_eval.cpp" />
+		<Unit filename="src/csved_evalvars.cpp" />
+		<Unit filename="src/csved_except.cpp" />
+		<Unit filename="src/csved_exclude.cpp" />
+		<Unit filename="src/csved_exec.cpp" />
+		<Unit filename="src/csved_fileinfo.cpp" />
+		<Unit filename="src/csved_filesplit.cpp" />
+		<Unit filename="src/csved_find.cpp" />
+		<Unit filename="src/csved_fixed.cpp" />
+		<Unit filename="src/csved_flatten.cpp" />
+		<Unit filename="src/csved_fmerge.cpp" />
+		<Unit filename="src/csved_fromxml.cpp" />
+		<Unit filename="src/csved_headtail.cpp" />
+		<Unit filename="src/csved_inter.cpp" />
+		<Unit filename="src/csved_ioman.cpp" />
+		<Unit filename="src/csved_join.cpp" />
+		<Unit filename="src/csved_main.cpp" />
+		<Unit filename="src/csved_map.cpp" />
+		<Unit filename="src/csved_merge.cpp" />
+		<Unit filename="src/csved_money.cpp" />
+		<Unit filename="src/csved_number.cpp" />
+		<Unit filename="src/csved_odbc.cpp" />
+		<Unit filename="src/csved_order.cpp" />
+		<Unit filename="src/csved_printf.cpp" />
+		<Unit filename="src/csved_put.cpp" />
+		<Unit filename="src/csved_readmulti.cpp" />
+		<Unit filename="src/csved_rmnewline.cpp" />
+		<Unit filename="src/csved_rules.cpp" />
+		<Unit filename="src/csved_seq.cpp" />
+		<Unit filename="src/csved_shuffle.cpp" />
+		<Unit filename="src/csved_sort.cpp" />
+		<Unit filename="src/csved_sparse.cpp" />
+		<Unit filename="src/csved_split.cpp" />
+		<Unit filename="src/csved_sql.cpp" />
+		<Unit filename="src/csved_stat.cpp" />
+		<Unit filename="src/csved_sum.cpp" />
+		<Unit filename="src/csved_template.cpp" />
+		<Unit filename="src/csved_timestamp.cpp" />
+		<Unit filename="src/csved_toxml.cpp" />
+		<Unit filename="src/csved_trim.cpp" />
+		<Unit filename="src/csved_truncpad.cpp" />
+		<Unit filename="src/csved_unique.cpp" />
+		<Unit filename="src/csved_util.cpp" />
+		<Unit filename="src/csved_valid.cpp" />
+		<Unit filename="src/csved_writemulti.cpp" />
+		<Unit filename="tests/correct/atable.test" />
+		<Unit filename="tests/correct/case.test" />
+		<Unit filename="tests/correct/dates.test" />
+		<Unit filename="tests/correct/echo.test" />
+		<Unit filename="tests/correct/edit.test" />
+		<Unit filename="tests/correct/escape.test" />
+		<Unit filename="tests/correct/eval.test" />
+		<Unit filename="tests/correct/exclude.test" />
+		<Unit filename="tests/correct/exec.test" />
+		<Unit filename="tests/correct/fileinfo.test" />
+		<Unit filename="tests/correct/find.test" />
+		<Unit filename="tests/correct/fixed.test" />
+		<Unit filename="tests/correct/flatten.test" />
+		<Unit filename="tests/correct/inter.test" />
+		<Unit filename="tests/correct/join.test" />
+		<Unit filename="tests/correct/map.test" />
+		<Unit filename="tests/correct/merge.test" />
+		<Unit filename="tests/correct/mline.test" />
+		<Unit filename="tests/correct/multi.test" />
+		<Unit filename="tests/correct/order.test" />
+		<Unit filename="tests/correct/out_join.test" />
+		<Unit filename="tests/correct/pad.test" />
+		<Unit filename="tests/correct/printf.test" />
+		<Unit filename="tests/correct/put.test" />
+		<Unit filename="tests/correct/read_dsv.test" />
+		<Unit filename="tests/correct/retsep.test" />
+		<Unit filename="tests/correct/sequence.test" />
+		<Unit filename="tests/correct/shuffle.test" />
+		<Unit filename="tests/correct/smoke.test" />
+		<Unit filename="tests/correct/sort.test" />
+		<Unit filename="tests/correct/specquote.test" />
+		<Unit filename="tests/correct/split.test" />
+		<Unit filename="tests/correct/sql_delete.test" />
+		<Unit filename="tests/correct/sql_insert.test" />
+		<Unit filename="tests/correct/sql_update.test" />
+		<Unit filename="tests/correct/table.test" />
+		<Unit filename="tests/correct/template.test" />
+		<Unit filename="tests/correct/toxml.test" />
+		<Unit filename="tests/correct/trim.test" />
+		<Unit filename="tests/correct/unique.test" />
+		<Unit filename="tests/correct/val_fields.test" />
+		<Unit filename="tests/correct/write_dsv.test" />
+		<Unit filename="tests/correct/xml_simple.test" />
+		<Unit filename="tests/data/army.csv" />
+		<Unit filename="tests/data/bad.xml" />
+		<Unit filename="tests/data/bad_names.csv" />
+		<Unit filename="tests/data/birthdays.csv" />
+		<Unit filename="tests/data/books.csv" />
+		<Unit filename="tests/data/books.xml" />
+		<Unit filename="tests/data/books.xsp" />
+		<Unit filename="tests/data/books2.xsp" />
+		<Unit filename="tests/data/books_title.csv" />
+		<Unit filename="tests/data/books_title.xsp" />
+		<Unit filename="tests/data/bookspec.xml" />
+		<Unit filename="tests/data/cities.csv" />
+		<Unit filename="tests/data/classmem.csv" />
+		<Unit filename="tests/data/countries.csv" />
+		<Unit filename="tests/data/countries.vdf" />
+		<Unit filename="tests/data/dates.csv" />
+		<Unit filename="tests/data/emp.csv" />
+		<Unit filename="tests/data/f2empty.csv" />
+		<Unit filename="tests/data/fixed.dat" />
+		<Unit filename="tests/data/fixed_names.dat" />
+		<Unit filename="tests/data/flat.csv" />
+		<Unit filename="tests/data/gbnl.csv" />
+		<Unit filename="tests/data/issue12_1.csv" />
+		<Unit filename="tests/data/issue12_2.csv" />
+		<Unit filename="tests/data/minmax.csv" />
+		<Unit filename="tests/data/multiline.csv" />
+		<Unit filename="tests/data/multiline.txt" />
+		<Unit filename="tests/data/names.csv" />
+		<Unit filename="tests/data/names.tpl" />
+		<Unit filename="tests/data/names_sc.csv" />
+		<Unit filename="tests/data/names_sc2.csv" />
+		<Unit filename="tests/data/names_scs.csv" />
+		<Unit filename="tests/data/nested.xml" />
+		<Unit filename="tests/data/numbers.csv" />
+		<Unit filename="tests/data/operators.dsv" />
+		<Unit filename="tests/data/paths.xml" />
+		<Unit filename="tests/data/pets.csv" />
+		<Unit filename="tests/data/pets.xsp" />
+		<Unit filename="tests/data/post.csv" />
+		<Unit filename="tests/data/sales_quarter.csv" />
+		<Unit filename="tests/data/sample.dsv" />
+		<Unit filename="tests/data/simple.xml" />
+		<Unit filename="tests/data/spaces.csv" />
+		<Unit filename="tests/data/sqlnull.csv" />
+		<Unit filename="tests/data/ssjoin1.csv" />
+		<Unit filename="tests/data/ssjoin2.csv" />
+		<Unit filename="tests/data/ssjoin3.csv" />
+		<Unit filename="tests/data/table.xml" />
+		<Unit filename="tests/data/tabsep.txt" />
+		<Unit filename="tests/data/template.txt" />
+		<Unit filename="tests/data/unflat.csv" />
+		<Unit filename="tests/data/unique.csv" />
+		<Unit filename="tests/data/val_fields.csv" />
+		<Unit filename="tests/data/val_fields.txt" />
+		<Unit filename="tests/data/varfields.csv" />
+		<Unit filename="tests/data/xmlspec1.txt" />
+		<Unit filename="tests/readme.txt" />
+		<Unit filename="tests/rules/date.txt" />
+		<Unit filename="tests/rules/fields.txt" />
+		<Unit filename="tests/rules/length.txt" />
+		<Unit filename="tests/rules/lookup.txt" />
+		<Unit filename="tests/rules/notempty.txt" />
+		<Unit filename="tests/rules/numeric.txt" />
+		<Unit filename="tests/rules/require.txt" />
+		<Unit filename="tests/rules/val_names.txt" />
+		<Unit filename="tests/rules/values.txt" />
+		<Unit filename="tests/run1" />
+		<Unit filename="tests/runsrc" />
+		<Unit filename="tests/runtests" />
+		<Unit filename="tests/tests/atable.test" />
+		<Unit filename="tests/tests/case.test" />
+		<Unit filename="tests/tests/dates.test" />
+		<Unit filename="tests/tests/diff.test" />
+		<Unit filename="tests/tests/echo.test" />
+		<Unit filename="tests/tests/edit.test" />
+		<Unit filename="tests/tests/escape.test" />
+		<Unit filename="tests/tests/eval.test" />
+		<Unit filename="tests/tests/exclude.test" />
+		<Unit filename="tests/tests/exec.test" />
+		<Unit filename="tests/tests/fileinfo.test" />
+		<Unit filename="tests/tests/find.test" />
+		<Unit filename="tests/tests/fixed.test" />
+		<Unit filename="tests/tests/flatten.test" />
+		<Unit filename="tests/tests/from_xml.test" />
+		<Unit filename="tests/tests/inter.test" />
+		<Unit filename="tests/tests/join.test" />
+		<Unit filename="tests/tests/lines.txt" />
+		<Unit filename="tests/tests/map.test" />
+		<Unit filename="tests/tests/merge.test" />
+		<Unit filename="tests/tests/mline.test" />
+		<Unit filename="tests/tests/multi.test" />
+		<Unit filename="tests/tests/order.test" />
+		<Unit filename="tests/tests/out_join.test" />
+		<Unit filename="tests/tests/pad.test" />
+		<Unit filename="tests/tests/printf.test" />
+		<Unit filename="tests/tests/put.test" />
+		<Unit filename="tests/tests/read_dsv.test" />
+		<Unit filename="tests/tests/retsep.test" />
+		<Unit filename="tests/tests/sequence.test" />
+		<Unit filename="tests/tests/shuffle.test" />
+		<Unit filename="tests/tests/smoke.test" />
+		<Unit filename="tests/tests/sort.test" />
+		<Unit filename="tests/tests/specquote.test" />
+		<Unit filename="tests/tests/split.test" />
+		<Unit filename="tests/tests/sql_delete.test" />
+		<Unit filename="tests/tests/sql_insert.test" />
+		<Unit filename="tests/tests/sql_update.test" />
+		<Unit filename="tests/tests/src2test/csved_diff.cpp.test" />
+		<Unit filename="tests/tests/src2test/csved_fromxml.cpp.test" />
+		<Unit filename="tests/tests/src2test/csved_join.cpp.test" />
+		<Unit filename="tests/tests/template.test" />
+		<Unit filename="tests/tests/toxml.test" />
+		<Unit filename="tests/tests/trim.test" />
+		<Unit filename="tests/tests/unique.test" />
+		<Unit filename="tests/tests/val_fields.test" />
+		<Unit filename="tests/tests/write_dsv.test" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<envvars />
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

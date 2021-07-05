@@ -1,0 +1,6 @@
+$CSVED read_dsv data/sample.dsv
+$CSVED read_dsv -cm data/sample.dsv
+$CSVED read_dsv -f 1000,1001,2000 data/sample.dsv
+$CSVED read_dsv -s '\t' data/tabsep.txt
+$CSVED read_dsv -s ' ' data/spacesep.txt
+$CSVED read_dsv -s ' ' -cm data/spacesep.txt

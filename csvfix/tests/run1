@@ -1,0 +1,137 @@
+#!bash
+# run1
+# run single test
+# copyright (C) 2008 Neil Butterworth
+
+#set -x
+
+# currently only one switch allowed on command line - needs fixing
+
+
+DO_OUT=0
+if [ "$1" = "-o" ]
+then
+	DO_OUT=1
+	shift
+fi
+
+DO_CORRECT=0
+if [ "$1" = "-c" ]
+then
+	DO_CORRECT=1
+	shift
+fi
+
+DO_DIFF=0
+if [ "$1" = "-d" ]
+then
+	DO_DIFF=1
+	shift
+fi
+
+USE_WINDIFF=0
+if [ "$1" = "-wd" ]
+then
+	USE_WINDIFF=1
+	shift
+fi
+
+if [ "$1" = "" ] 
+then
+	TEST=$(swine open -dir tests -caption "Select Test" -types test)
+	if [ $TEST = "" ] 
+	then
+		echo "missing test name"
+		exit 1
+	fi
+else
+	TEST="$1"
+fi
+
+# exe to be tested - used in tests
+CSVED=../bin/csvfix.exe
+export CSVED
+
+if [ ! -f "$CSVED" ]
+then
+	echo "No such binary: $CSVED" 
+	exit 1
+fi
+
+if [ ! -d tmp ]
+then
+	mkdir tmp
+fi
+
+# where to find diff & where to put output
+DIFF=/bin/diff
+DIFFOUT=tmp/_diffout
+WINDIFF="C:/Program Files/Microsoft Visual Studio/Common/Tools/WINDIFF.EXE"
+TEST=`basename $TEST`
+OUT="tmp/$TEST"
+
+# pretty display - needs ANSI term support
+color_red()
+{
+	echo -e "\033[01;31m$1\033[00m"
+}
+
+if [ ! -f tests/$TEST ]
+then
+	echo "No test: $TEST"
+	exit 1
+fi
+
+# run test, displaying output but not diffing
+if [ "$DO_OUT" = "1" ]
+then
+	bash "tests/$TEST" 
+	exit 0
+fi
+
+# store correct output without displaying it
+if [ "$DO_CORRECT" = "1" ]
+then
+	if bash "tests/$TEST" > correct/$TEST
+	then
+		echo "Created correct output"
+		exit 0
+	else
+		echo "Execution problem with $TEST -c - please correct"
+		exit 1
+	fi
+fi
+
+# run proper test - must have correct output to test against
+if [ ! -f correct/$TEST ]
+then
+	echo "No correct output $TEST"
+	exit 1
+fi
+
+# run test producing output then diff that output against the previously
+# saved correct output 
+if bash "tests/$TEST" > $OUT
+then
+	if $DIFF correct/$TEST tmp/$TEST > $DIFFOUT
+	then
+		echo PASSED $TEST
+		exit 0
+	else
+		color_red "FAILED $TEST"
+		if [ "$USE_WINDIFF" = "1" ]
+		then
+			"$WINDIFF" correct/$TEST tmp/$TEST
+			exit 1
+		else
+			if [ "$DO_DIFF" = "1" ] 
+			then
+				cat $DIFFOUT
+			fi
+			exit 1
+		fi
+	fi
+else
+	echo "Execution problem with $TEST - please correct"
+fi
+

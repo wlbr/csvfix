@@ -1,0 +1,10 @@
+$CSVED head data/names.csv
+echo "------------------"
+$CSVED head -n 3 data/names.csv
+echo "------------------"
+$CSVED head -n 300 data/names.csv
+echo "------------------"
+$CSVED tail -n 3 data/names.csv
+echo "------------------"
+$CSVED tail -n 300 data/names.csv
+echo "------------------"

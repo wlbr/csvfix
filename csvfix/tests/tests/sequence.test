@@ -1,0 +1,4 @@
+# test escape command
+$CSVED sequence -n 1000 -p 5 -i 10  data/names.csv 
+$CSVED sequence -n 1000 -p 5 -d 10  data/names.csv 
+$CSVED sequence -n 1000 -p 5 -i 10 -m "A@Z" data/names.csv 

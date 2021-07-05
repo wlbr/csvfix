@@ -1,0 +1,3 @@
+$CSVED number  data/monum.csv
+$CSVED number  -f 2 data/en_num.csv
+$CSVED number  -f 2 -fmt EU data/eu_num.csv

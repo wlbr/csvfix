@@ -1,0 +1,3 @@
+$CSVED summary -siz data/army.csv
+$CSVED summary -med 1 data/med_even.csv
+$CSVED summary -med 1 data/med_odd.csv

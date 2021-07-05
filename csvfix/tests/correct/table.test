@@ -1,0 +1,23 @@
+<table>
+  <tr>
+    <td>Charles</td><td>Dickens</td><td>M</td>
+  </tr>
+  <tr>
+    <td>Jane</td><td>Austen</td><td>F</td>
+  </tr>
+  <tr>
+    <td>Herman</td><td>Melville</td><td>M</td>
+  </tr>
+  <tr>
+    <td>Flann</td><td>O'Brien</td><td>M</td>
+  </tr>
+  <tr>
+    <td>George</td><td>Elliot</td><td>F</td>
+  </tr>
+  <tr>
+    <td>Virginia</td><td>Wolfe</td><td>F</td>
+  </tr>
+  <tr>
+    <td>Oscar</td><td>Wilde</td><td>M</td>
+  </tr>
+</table>

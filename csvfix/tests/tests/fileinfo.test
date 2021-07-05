@@ -1,0 +1,2 @@
+$CSVED file_info  data/names.csv 
+$CSVED file_info -tc data/names.csv 

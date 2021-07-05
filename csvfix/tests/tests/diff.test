@@ -1,0 +1,8 @@
+$CSVED diff data/n1.csv data/n1.csv
+$CSVED diff data/n1.csv data/n2.csv
+$CSVED diff data/n1.csv data/n3.csv
+$CSVED diff data/n3.csv data/n1.csv
+$CSVED diff data/nf.csv data/nf2.csv
+$CSVED diff -f 1,3 data/nf.csv data/nf2.csv
+$CSVED diff -f 2 data/nf.csv data/nf2.csv
+exit 0

@@ -1,0 +1,2 @@
+$CSVED money  data/monum.csv
+$CSVED money -ts '.', -dp ',' -cs '$' data/monum.csv

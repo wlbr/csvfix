@@ -1,0 +1,6 @@
+$CSVED edit -f 2 -e "s/e/XX/g" data/names.csv
+$CSVED edit -f 2 -e "s:e:XX:g" data/names.csv
+$CSVED edit -f 2 -e "s/e/\/XX/g" data/names.csv
+$CSVED edit -f 2 -e "s/xxx/ZZZZ/g" data/names.csv
+$CSVED edit -f 3 -e "s/\([MF]\)/:\1:/" data/names.csv
+$CSVED edit -f 3 -e "s/^$/ /" data/mc.csv

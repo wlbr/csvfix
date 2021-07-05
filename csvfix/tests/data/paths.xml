@@ -1,0 +1,15 @@
+<root name="the root">
+	<foo name="foo">
+		<bar name="foo:bar" >
+			<foo name="foo:bar:foo">
+				nested foo stuff
+			</foo>
+			<other>
+				other stuff
+			</other>
+		</bar>
+	</foo>
+	<foo name="foo">
+		not nested
+	</foo>
+</root>

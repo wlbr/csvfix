@@ -1,0 +1,2 @@
+# test multiline data
+$CSVED echo data/multiline.csv

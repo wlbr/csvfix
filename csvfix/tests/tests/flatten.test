@@ -1,0 +1,3 @@
+# test flatten
+$CSVED flatten  data/flat.csv 
+$CSVED unflatten  data/unflat.csv 

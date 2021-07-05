@@ -1,0 +1,9 @@
+data/val_multi.csv (1): ,31/2/2012,xyz,payment,destination
+    field: 4 - "payment" is invalid value
+    field: 2 - Invalid date '31/2/2012'
+    field: 3 - "xyz" is not numeric
+data/val_multi.csv (2): Lucas,31/2/2012,zsd,payment,
+    field: 5 - field is empty
+    field: 4 - "payment" is invalid value
+    field: 2 - Invalid date '31/2/2012'
+    field: 3 - "zsd" is not numeric

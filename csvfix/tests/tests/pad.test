@@ -1,0 +1,2 @@
+$CSVED pad -n 4 -p NULL  data/sales_quarter.csv
+$CSVED truncate -n 2 data/sales_quarter.csv

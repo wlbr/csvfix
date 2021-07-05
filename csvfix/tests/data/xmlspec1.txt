@@ -1,0 +1,2 @@
+tag Root group 1,2 attrib RA1 1
+	tag Child group 3 attrib Attr1 1 attrib Attr2 2

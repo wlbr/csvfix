@@ -7,8 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-
+  build_linux:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -35,6 +34,20 @@ jobs:
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./csvfix/bin/csvfix.linux-amd64.gz
-        asset_name: azblogfilter.linux-amd64.gz
+        asset_name: csvfix.linux-amd64.gz
         asset_content_type: application/gzip
-
+  build_mac:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make mac
+    - name: upload mac artifact
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./csvfix/bin/csvfix.osx.gz
+        asset_name: csvfix.osx.gz
+        asset_content_type: application/gzip

@@ -24,6 +24,8 @@ mac:
 	mkdir -p alib/obj alib/lib csvfix/obj csvfix/bin
 	cd alib; $(MAKE) lin CCTYPE=clang
 	cd csvfix; $(MAKE) lin CCTYPE=clang
+	cd csvfix/bin; gzip csvfix -c > csvfix.osx.gz
+
 
 clean:
 	$(CLEAN)

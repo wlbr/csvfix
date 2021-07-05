@@ -1,0 +1,2 @@
+$CSVED split_char -f 1 -tna  data/idname.csv
+$CSVED split_char -f 1 -tan  data/nameid.csv

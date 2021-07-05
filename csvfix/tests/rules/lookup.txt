@@ -1,0 +1,3 @@
+# test loookup with city -> country 
+lookup 	*	2:1	data/countries.csv
+

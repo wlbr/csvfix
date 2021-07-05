@@ -1,0 +1,4 @@
+tag pets
+	tag owner group 1,2 attrib forename 1 attrib surname 2
+		tag pet group 3 attrib name 3 attrib species 4
+			text 5

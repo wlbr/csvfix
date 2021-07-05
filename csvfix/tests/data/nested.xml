@@ -1,0 +1,21 @@
+<root attrib="root attrib">
+	root string
+	<name>root name</name>
+	<records>
+		<rec-count>	2</rec-count>
+		<rec>
+			<name>foo</name>
+			<value>bar</value>
+		</rec>
+		<rec>
+			<name>one</name>
+			<value>two</value>
+		</rec>
+	</records>
+	<done attrib="done attrib" >
+		<name>done name text </name>
+	</done>
+	end root
+</root>
+
+

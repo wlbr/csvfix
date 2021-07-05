@@ -1,0 +1,7 @@
+tag books
+	tag title group 3 attrib name 3
+		tag character group 4
+			tag name
+				text 4
+			tag desc
+				text 5

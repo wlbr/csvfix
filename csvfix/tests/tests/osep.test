@@ -1,0 +1,2 @@
+$CSVED order -f 1,2,3 -osep '|' -smq data/names.csv
+$CSVED echo -osep '|' -smq data/symbols.csv

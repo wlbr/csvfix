@@ -1,0 +1,16 @@
+echo ---- equi join ---
+$CSVED join -f 2:1 data/cities.csv data/countries.csv
+echo ---- equi join retaining key fields ---
+$CSVED join -k -f 2:1 data/cities.csv data/countries.csv
+echo ---- exclude GB + NL ----
+$CSVED join -inv -f 2:1 data/cities.csv data/gbnl.csv
+echo ---- join with custom sep ----
+$CSVED join  -sep ';'  -f 1:1 data/ssjoin1.csv data/ssjoin2.csv
+echo "---- join with custom sep  (inverse) ----"
+$CSVED join  -sep ';' -inv  -f 1:1 data/ssjoin1.csv data/ssjoin3.csv
+echo "---- join issue #12 stuff"
+$CSVED join  -sep ';' -inv  -f 1:1 data/issue12_1.csv data/issue12_2.csv
+echo "---- join -ic option original data ----"
+$CSVED join -inv -ic -f 2:1 data/cities.csv data/gbnl.csv
+echo "---- join -ic option lowercase data ----"
+$CSVED join -inv -ic -f 2:1 data/cities.csv data/gbnllc.csv

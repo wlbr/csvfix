@@ -1,0 +1,7 @@
+required 1,5
+notempty 5
+values 4 "M" "F"
+date 2 'd/m/y'
+numeric 3
+
+

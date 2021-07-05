@@ -1,0 +1,87 @@
+<pets>
+    <owner forename="Neil" surname="Butterworth">
+        <pet name="Alice" species="cat">
+            Stupid  black furball
+        </pet>
+        <pet name="Fred" species="tortoise">
+            Boring reptile
+        </pet>
+    </owner>
+    <owner forename="Lynn" surname="Morrice">
+        <pet name="Eric" species="log">
+            A piece of wood
+        </pet>
+    </owner>
+    <owner forename="Brian" surname="Butterworth">
+        <pet name="BP" species="cat">
+            Even more stupid than Alice
+        </pet>
+        <pet name="Cat" species="cat">
+            Ball of claws
+        </pet>
+    </owner>
+    <owner forename="Vivian" surname="Thing">
+        <pet name="SPG" species="hamster">
+            Small rodent TV star
+
+        </pet>
+    </owner>
+</pets>
+<characters>
+    <author forename="Charles" surname="Dickens">
+        <book title="Bleak House">
+            <character name="Esther Sumerson" desc="Drippy Heroine" />
+            <character name="Inspector Bucket" desc="Prototype detective" />
+        </book>
+        <book title="Great Expectations">
+            <character name="Pip" desc="Deluded ex-blacksmith" />
+        </book>
+        <book title="Bleak House">
+            <character name="Mr Vholes" desc="Vampiric lawyer" />
+        </book>
+    </author>
+    <author forename="Jane" surname="Austen">
+        <book title="Emma">
+            <character name="Emma Woodhouse" desc="Smug Surrey goddess" />
+        </book>
+        <book title="Pride &amp; Prejudice">
+            <character name="Elizabeth Bennet" desc="Non-drippy heroine" />
+            <character name="Mr Darcy" desc="Proud landowner" />
+        </book>
+    </author>
+    <author forename="Herman" surname="Melville">
+        <book title="Moby Dick">
+            <character name="Queeqeg" desc="Tattooed harpooneer" />
+            <character name="Moby Dick" desc="Great white whale" />
+        </book>
+    </author>
+</characters>
+<table>
+    <tr>
+        <td>Dickens</td><td>Charles</td><td>Bleak House</td><td>Esther Sumerson</td><td>Drippy Heroine</td>
+    </tr>
+    <tr>
+        <td>Dickens</td><td>Charles</td><td>Bleak House</td><td>Inspector Bucket</td><td>Prototype detective</td>
+    </tr>
+    <tr>
+        <td>Dickens</td><td>Charles</td><td>Great Expectations</td><td>Pip</td><td>Deluded ex-blacksmith</td>
+    </tr>
+    <tr>
+        <td>Dickens</td><td>Charles</td><td>Bleak House</td><td>Mr Vholes</td><td>Vampiric lawyer</td>
+    </tr>
+    <tr>
+        <td>Austen</td><td>Jane</td><td>Emma</td><td>Emma Woodhouse</td><td>Smug Surrey goddess</td>
+    </tr>
+    <tr>
+        <td>Austen</td><td>Jane</td><td>Pride &amp; Prejudice</td><td>Elizabeth Bennet</td><td>Non-drippy heroine</td>
+    </tr>
+    <tr>
+        <td>Austen</td><td>Jane</td><td>Pride &amp; Prejudice</td><td>Mr Darcy</td><td>Proud landowner</td>
+    </tr>
+    <tr>
+        <td>Melville</td><td>Herman</td><td>Moby Dick</td><td>Queeqeg</td><td>Tattooed harpooneer</td>
+    </tr>
+    <tr>
+        <td>Melville</td><td>Herman</td><td>Moby Dick</td><td>Moby Dick</td><td>Great white whale</td>
+    </tr>
+</table>

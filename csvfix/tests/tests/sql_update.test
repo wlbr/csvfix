@@ -1,0 +1,3 @@
+# test sql insert generation
+$CSVED sql_update -t people -f 1:forename,2:surname  -w 1:forename data/names.csv 
+$CSVED sql_update -en -t stuff -f 1:one,2:two  -w 1:one data/sql_ef.csv 

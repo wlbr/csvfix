@@ -1,0 +1,4 @@
+string::size
+string::length
+vector::push_back
+std::vector::push_back

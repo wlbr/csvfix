@@ -1,0 +1,2 @@
+# outer join
+$CSVED join -oj -f 2:1  data/cities.csv data/countries.csv

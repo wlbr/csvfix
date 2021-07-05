@@ -1,0 +1,3 @@
+$CSVED validate  -vf data/val_fields.txt data/val_fields.csv
+$CSVED validate  -vf data/val_values.txt data/names.csv
+$CSVED validate  -vf data/val_multi.txt data/val_multi.csv

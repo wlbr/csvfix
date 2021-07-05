@@ -1,0 +1,3 @@
+# test sql delete generation
+$CSVED sql_delete -t people  -w 1:forename,2:surname data/names.csv 
+$CSVED sql_delete -t dummy -en -w 1:one,2:two data/sql_ef.csv 

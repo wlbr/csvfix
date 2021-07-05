@@ -1,0 +1,17 @@
+while true
+do
+	cd tests
+	t=$(ls *.test | swine pick --caption "Select a test to run")
+	cd ..
+	if [ "$t" = "" ]
+	then
+		exit
+	fi
+	tb=$(basename $t)
+	if ./run1 $tb > /dev/null
+	then
+		swine msg -i info -t "test passed!" -c "$tb" > /dev/null
+	else
+		swine msg -i error -text "test failed" -c "$tb" > /dev/null
+	fi
+done

@@ -1,0 +1,11 @@
+<tag name="authors">
+	<attrib name="first" field="1"/>
+	<tag name="author" key="1,2">
+		<attrib name="sname" field="1" />
+		<attrib name="sname" field="2" />
+		<tag name="book" key="3">
+			<attrib name="title" field="3" />
+			<tag name="character" key="4" />
+		</tag>
+	</tag>
+</tag>

@@ -1,0 +1,38 @@
+---- equi join ---
+"London","GB","United Kingdom"
+"Paris","FR","France"
+"Edinurgh","GB","United Kingdom"
+"Amsterdam","NL","Netherlands"
+"Rome","IT","Italy"
+"Berlin","DE","Germany"
+---- equi join retaining key fields ---
+"London","GB","GB","United Kingdom"
+"Paris","FR","FR","France"
+"Edinurgh","GB","GB","United Kingdom"
+"Amsterdam","NL","NL","Netherlands"
+"Rome","IT","IT","Italy"
+"Berlin","DE","DE","Germany"
+---- exclude GB + NL ----
+"Paris","FR"
+"Rome","IT"
+"Athens","GR"
+"Berlin","DE"
+---- join with custom sep ----
+"1","foo","one"
+"2","bar","two"
+"3","zod","three"
+---- join with custom sep  (inverse) ----
+"2","bar"
+"3","zod"
+---- join issue #12 stuff
+"2","true","3,4"
+---- join -ic option original data ----
+"Paris","FR"
+"Rome","IT"
+"Athens","GR"
+"Berlin","DE"
+---- join -ic option lowercase data ----
+"Paris","FR"
+"Rome","IT"
+"Athens","GR"
+"Berlin","DE"

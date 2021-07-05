@@ -1,0 +1,2 @@
+$CSVED rmnew -s ':' data/newline.csv
+$CSVED rmnew -x data/newline.csv

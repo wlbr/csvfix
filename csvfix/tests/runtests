@@ -1,0 +1,24 @@
+#!bash
+# runall.bash
+# run all tests and report
+
+# set -x
+
+TOTAL=0
+PASSES=0
+FAILS=0
+for TEST in tests/*.test
+do
+	TESTNAME=`basename $TEST`	
+	if ./run1 $TESTNAME
+	then
+		let PASSES=PASSES+1
+	else
+		let FAILS=FAILS+1
+	fi
+done
+
+echo ""
+echo $FAILS failed, $PASSES passed
+echo ""
+

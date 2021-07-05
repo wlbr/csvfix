@@ -1,0 +1,1 @@
+$CSVED block -be '$1 == 2' -ee '$1 == 4' -m 'BLOCK,NOT'  data/block1.csv

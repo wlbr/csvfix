@@ -1,0 +1,24 @@
+syntax: glob
+*.o
+*.exe
+*.dll
+csvfix/test/tmp
+*.a
+alib/lib
+alib/obj
+csvfix/bin
+csvfix/obj
+*.layout
+*.depend
+csvfix/tests/tmp
+*_build_log.html
+doc/output
+doc/HTML
+desktop.ini
+csvfix/installer/Files/*
+csvfix/installer/Output/*
+*.zip
+*backup
+*.orig
+*.smproj
+*.swp

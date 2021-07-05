@@ -1,0 +1,28 @@
+Forename is Charles and surname is Dickens
+Forename is Jane and surname is Austen
+Forename is Herman and surname is Melville
+Forename is Flann and surname is O'Brien
+Forename is George and surname is Elliot
+Forename is Virginia and surname is Woolf
+Forename is Oscar and surname is Wilde
+Field #1: Charles
+Concat #1 and #2: Charles Dickens
+Upper #1: CHARLES
+Field #1: Jane
+Concat #1 and #2: Jane Austen
+Upper #1: JANE
+Field #1: Herman
+Concat #1 and #2: Herman Melville
+Upper #1: HERMAN
+Field #1: Flann
+Concat #1 and #2: Flann O'Brien
+Upper #1: FLANN
+Field #1: George
+Concat #1 and #2: George Elliot
+Upper #1: GEORGE
+Field #1: Virginia
+Concat #1 and #2: Virginia Woolf
+Upper #1: VIRGINIA
+Field #1: Oscar
+Concat #1 and #2: Oscar Wilde
+Upper #1: OSCAR

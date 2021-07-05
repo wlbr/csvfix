@@ -1,0 +1,73 @@
+<characters>
+    <author forename="Charles" surname="Dickens">
+        <book title="Bleak House">
+            <character>
+                <name>
+                    Esther Sumerson
+                </name>
+                <description>
+                    Drippy heroine
+                </description>
+            </character>
+            <character>
+                <name>
+                    Inspector Bucket
+                </name>
+                <description>
+                    Prototype detective
+                </description>
+            </character>
+        </book>
+        <book title="Great Expectations">
+            <character>
+                <name>
+                    Pip
+                </name>
+                <description>
+                    Deluded ex-blacksmith
+                </description>
+            </character>
+        </book>
+        <book title="Bleak House">
+            <character>
+                <name>
+                    Mr Vholes
+                </name>
+                <description>
+                    Vampiric lawyer
+                </description>
+            </character>
+        </book>
+    </author>
+    <author forename="Jane" surname="Austen">
+        <book title="Emma">
+            <character>
+                <name>
+                    Emma Woodhouse
+                </name>
+                <description>
+                    Smug Surrey goddess
+                </description>
+            </character>
+        </book>
+        <book title="Pride &amp; Prejudice">
+            <character>
+                <name>
+                    Elizabeth Bennet
+                </name>
+                <description>
+                    Non-drippy heroine
+                </description>
+            </character>
+            <character>
+                <name>
+                    Mr Darcy
+                </name>
+                <description>
+                    Proud, wet-shirted landowner
+                </description>
+            </character>
+        </book>
+    </author>
+</characters>
+

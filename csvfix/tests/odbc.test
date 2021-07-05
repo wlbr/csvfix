@@ -1,0 +1,11 @@
+# custom test for odbc stuff - windows only
+
+../bin/csvfix.exe   odbc -h -cs "DATABASE=data/army.db3;DRIVER=SQLite3 ODBC Driver" -tbl army > tmp/odbc.test
+
+if diff tmp/odbc.test correct/odbc.test > /dev/null
+then
+	echo "passed"
+else
+	echo "failed"
+fi
+

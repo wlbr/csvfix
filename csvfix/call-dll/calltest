@@ -1,0 +1,2 @@
+# test the dll can be called
+../bin/csvfix call -fnc MyFunc -dll mydll.dll -bs 8 input.csv

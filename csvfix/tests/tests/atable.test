@@ -1,0 +1,2 @@
+$CSVED ascii_table -h '@' data/army.csv
+$CSVED ascii_table -s -h '@' data/army.csv

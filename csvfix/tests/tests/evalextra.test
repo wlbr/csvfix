@@ -1,0 +1,1 @@
+$CSVED eval -e '-1' -e '-1+1' -e 'substr("123",1,2)+1' -e 'substr("123",1,2)-1' data/one.csv 

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="test" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\test" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-DALIB_TEST" />
+					<Add directory="inc" />
+					<Add directory="expat" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="lib\libalib" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj\Release\" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="inc" />
+					<Add directory="expat" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Linker>
+			<Add library="libodbc32.a" />
+		</Linker>
+		<Unit filename="expat\ascii.h" />
+		<Unit filename="expat\asciitab.h" />
+		<Unit filename="expat\expat.h" />
+		<Unit filename="expat\expat_external.h" />
+		<Unit filename="expat\iasciitab.h" />
+		<Unit filename="expat\internal.h" />
+		<Unit filename="expat\latin1tab.h" />
+		<Unit filename="expat\macconfig.h" />
+		<Unit filename="expat\nametab.h" />
+		<Unit filename="expat\utf8tab.h" />
+		<Unit filename="expat\winconfig.h" />
+		<Unit filename="expat\xmlparse.cpp" />
+		<Unit filename="expat\xmlrole.cpp" />
+		<Unit filename="expat\xmlrole.h" />
+		<Unit filename="expat\xmltok.cpp" />
+		<Unit filename="expat\xmltok.h" />
+		<Unit filename="expat\xmltok_impl.cpp" />
+		<Unit filename="expat\xmltok_impl.h" />
+		<Unit filename="expat\xmltok_ns.cpp" />
+		<Unit filename="inc\_template.h" />
+		<Unit filename="inc\a_base.h" />
+		<Unit filename="inc\a_chsrc.h" />
+		<Unit filename="inc\a_collect.h" />
+		<Unit filename="inc\a_csv.h" />
+		<Unit filename="inc\a_date.h" />
+		<Unit filename="inc\a_db.h" />
+		<Unit filename="inc\a_debug.h" />
+		<Unit filename="inc\a_dict.h" />
+		<Unit filename="inc\a_enc.h" />
+		<Unit filename="inc\a_env.h" />
+		<Unit filename="inc\a_except.h" />
+		<Unit filename="inc\a_expr.h" />
+		<Unit filename="inc\a_file.h" />
+		<Unit filename="inc\a_html.h" />
+		<Unit filename="inc\a_inifile.h" />
+		<Unit filename="inc\a_log.h" />
+		<Unit filename="inc\a_math.h" />
+		<Unit filename="inc\a_myth.h" />
+		<Unit filename="inc\a_nameval.h" />
+		<Unit filename="inc\a_rand.h" />
+		<Unit filename="inc\a_range.h" />
+		<Unit filename="inc\a_regex.h" />
+		<Unit filename="inc\a_shstr.h" />
+		<Unit filename="inc\a_slice.h" />
+		<Unit filename="inc\a_sort.h" />
+		<Unit filename="inc\a_str.h" />
+		<Unit filename="inc\a_table.h" />
+		<Unit filename="inc\a_time.h" />
+		<Unit filename="inc\a_valptr.h" />
+		<Unit filename="inc\a_xmlevents.h" />
+		<Unit filename="inc\a_xmlparser.h" />
+		<Unit filename="inc\a_xmltree.h" />
+		<Unit filename="src\a_chsrc.cpp" />
+		<Unit filename="src\a_csv.cpp" />
+		<Unit filename="src\a_date.cpp" />
+		<Unit filename="src\a_db.cpp" />
+		<Unit filename="src\a_debug.cpp" />
+		<Unit filename="src\a_enc.cpp" />
+		<Unit filename="src\a_env.cpp" />
+		<Unit filename="src\a_except.cpp" />
+		<Unit filename="src\a_expr.cpp" />
+		<Unit filename="src\a_file.cpp" />
+		<Unit filename="src\a_html.cpp" />
+		<Unit filename="src\a_inifile.cpp" />
+		<Unit filename="src\a_log.cpp" />
+		<Unit filename="src\a_math.cpp" />
+		<Unit filename="src\a_myth.cpp" />
+		<Unit filename="src\a_nameval.cpp" />
+		<Unit filename="src\a_rand.cpp" />
+		<Unit filename="src\a_range.cpp" />
+		<Unit filename="src\a_regex.cpp" />
+		<Unit filename="src\a_shstr.cpp" />
+		<Unit filename="src\a_slice.cpp" />
+		<Unit filename="src\a_sort.cpp" />
+		<Unit filename="src\a_str.cpp" />
+		<Unit filename="src\a_table.cpp" />
+		<Unit filename="src\a_time.cpp" />
+		<Unit filename="src\a_xmlevents.cpp" />
+		<Unit filename="src\a_xmlparser.cpp" />
+		<Unit filename="src\a_xmltree.cpp" />
+		<Unit filename="src\test_main.cpp">
+			<Option target="Debug" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

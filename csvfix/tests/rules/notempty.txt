@@ -1,0 +1,2 @@
+# test notempty rule
+notempty		1,2,3

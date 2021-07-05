@@ -1,0 +1,5 @@
+$CSVED map -f 1,3 -fv "M,F" -tv "Male,Female" data/names.csv
+$CSVED map -f 1,3 -fv "Jane,M,F,Zod" -tv "JANE,X,Y,Z"  data/names.csv
+$CSVED map -fv "Jane,M,F,Zod" -tv "JANE,X,Y,Z"  data/names.csv
+$CSVED map -f 2 -fv "" -tv '$1'  data/f2empty.csv
+$CSVED map -f 2 -fv "" -tv ' '  data/f2empty.csv

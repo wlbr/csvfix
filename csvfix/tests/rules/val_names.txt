@@ -1,0 +1,11 @@
+# val_names.txt
+#
+# check that:
+#	each row in the file has at least three fields
+#	all fields contain some non-whitespace data
+#	the third field contains only the values "M" and "F"
+
+required		1,2,3
+notempty		1,2,3
+values		3		"M" "F"
+

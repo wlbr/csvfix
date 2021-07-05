@@ -1,0 +1,2 @@
+# test date rule
+date	1	d/m/y 2000-1-1:2010-1-1

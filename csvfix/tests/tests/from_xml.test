@@ -1,0 +1,7 @@
+$CSVED from_xml -re 'character' data/books.xml
+$CSVED from_xml -re 'foo' data/paths.xml
+$CSVED from_xml -re 'bar@foo' data/paths.xml
+$CSVED from_xml -re 'bar@foo,other' -ip data/paths.xml
+$CSVED from_xml -re 'tr' data/table.xml
+$CSVED from_xml -re rec -ex done data/nested.xml
+

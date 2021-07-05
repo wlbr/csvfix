@@ -1,0 +1,3 @@
+$CSVED to_xml -xf data/pets.xsp data/pets.csv
+$CSVED to_xml -xf data/books.xsp data/books.csv
+$CSVED to_xml data/books.csv

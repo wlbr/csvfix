@@ -1,3 +1,0 @@
-# test numeric
-numeric		1
-numeric		2	1:10

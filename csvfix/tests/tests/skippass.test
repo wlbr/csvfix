@@ -1,2 +1,0 @@
-$CSVED order -skip '$3=="M"' -f 1,2  data/names.csv
-$CSVED order -pass '$3=="M"' -f 1,2  data/names.csv

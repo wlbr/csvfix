@@ -1,2 +1,0 @@
-# test values rule
-values	1,3	M F

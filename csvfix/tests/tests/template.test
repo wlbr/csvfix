@@ -1,3 +1,0 @@
-# test template
-$CSVED template -tf data/template.txt  data/names.csv 
-$CSVED template -tf data/tplexpr.txt  data/names.csv 

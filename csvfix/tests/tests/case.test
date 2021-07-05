@@ -1,3 +1,0 @@
-$CSVED upper -f 2 data/names.csv 
-$CSVED lower -f 2 data/names.csv 
-$CSVED mixed -f 2 data/names.csv 

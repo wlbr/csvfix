@@ -1,2 +1,0 @@
-# test require rule
-required		1,2,3,4

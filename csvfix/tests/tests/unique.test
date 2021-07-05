@@ -1,2 +1,0 @@
-$CSVED unique -f 1  data/post.csv 
-$CSVED unique -f 1 -d  data/post.csv 

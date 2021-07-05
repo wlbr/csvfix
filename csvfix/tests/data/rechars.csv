@@ -1,3 +1,0 @@
-.*,anything
-[1-9],range
-^$,empty

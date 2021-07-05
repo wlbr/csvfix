@@ -1,4 +1,0 @@
-required    1,2,3
-notempty    1,2,3
-values      3        "M" "F"
-

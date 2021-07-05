@@ -1,2 +1,0 @@
-$CSVED put -p 2 -v "foo"  data/names.csv
-$CSVED put -p 1 -v "@COUNT"  data/varfields.csv

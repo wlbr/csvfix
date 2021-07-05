@@ -9,6 +9,8 @@ on:
 jobs:
   build_linux:
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
     steps:
     - uses: actions/checkout@v2
     - name: make
@@ -51,4 +53,20 @@ jobs:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./csvfix/bin/csvfix.osx.gz
         asset_name: csvfix.osx.gz
+        asset_content_type: application/gzip
+  build_win:
+    needs: build_linux
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make win
+    - name: upload win artifact
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./csvfix/bin/csvfix.win64.gz
+        asset_name: csvfix.win64.gz
         asset_content_type: application/gzip

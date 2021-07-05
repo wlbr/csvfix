@@ -37,6 +37,7 @@ jobs:
         asset_name: csvfix.linux-amd64.gz
         asset_content_type: application/gzip
   build_mac:
+    needs: build_linux
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2

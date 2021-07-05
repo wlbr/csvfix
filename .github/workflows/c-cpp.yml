@@ -10,7 +10,7 @@ jobs:
   build_linux:
     runs-on: ubuntu-latest
     outputs:
-      version: ${{ steps.version.outputs.version }}
+      upload_url: ${{ steps.create_release.outputs.upload_url }}
     steps:
     - uses: actions/checkout@v2
     - name: make
@@ -50,7 +50,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ github.token }}
       with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        upload_url: ${{needs.build_linux.outputs.upload_url}}
         asset_path: ./csvfix/bin/csvfix.osx.gz
         asset_name: csvfix.osx.gz
         asset_content_type: application/gzip
@@ -66,7 +66,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ github.token }}
       with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        upload_url: ${{needs.build_linux.outputs.upload_url}}
         asset_path: ./csvfix/bin/csvfix.win64.gz
         asset_name: csvfix.win64.gz
         asset_content_type: application/gzip

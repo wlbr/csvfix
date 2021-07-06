@@ -1,5 +1,5 @@
-readme.txt
-----------
+CSVfix
+------
 
 This is the source for CSVfix and the supporting alib library.
 Building requires a GCC installation.  To build, enter the command 

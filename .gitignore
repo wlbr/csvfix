@@ -12,7 +12,7 @@ csvfix/obj
 csvfix/tests/tmp
 *_build_log.html
 doc/output
-doc/HTML
+#doc/HTML
 desktop.ini
 csvfix/installer/Files/*
 csvfix/installer/Output/*
@@ -21,4 +21,4 @@ csvfix/installer/Output/*
 *.orig
 *.smproj
 *.swp
-.vscode/
+.vscode

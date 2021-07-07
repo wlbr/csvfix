@@ -1,0 +1,646 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="generator" content="HelpNDoc Personal Edition 7.4.0.390">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="favicon.ico"/>
+
+  <title>Expression Language</title>
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="">
+
+
+
+  
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Expression Language">
+  <meta name="twitter:description" content="">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Expression Language" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="CSVfix 1.6  Manual" /> 
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendors/bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="vendors/bootstrap-3.4.1/css/ie10-viewport-bug-workaround.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="vendors/html5shiv-3.7.3/html5shiv.min.js"></script>
+      <script src="vendors/respond-1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <!-- JsTree styles -->
+  <link href="vendors/jstree-3.3.10/themes/default/style.min.css" rel="stylesheet"/>
+
+  <!-- Hnd styles -->
+  <link href="css/layout.min.css" rel="stylesheet" />
+  <link href="css/effects.min.css" rel="stylesheet" />
+  <link href="css/theme-light-blue.min.css" rel="stylesheet" />
+  <link href="css/print.min.css" rel="stylesheet" media="print" />
+  <style type="text/css">nav { width: 350px} @media screen and (min-width:769px) { body.md-nav-expanded div#main { margin-left: 350px} body.md-nav-expanded header { padding-left: 364px} }</style>
+
+  <!-- Content style -->
+  <link href="css/hnd.content.css" rel="stylesheet" />
+
+  
+
+
+
+</head>
+
+<body class="md-nav-expanded">
+
+
+
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible">Skip to main content</a>
+  </div>
+
+  <header class="headroom">
+    <button class="hnd-toggle btn btn-default">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>        
+    </button>
+    <h1>CSVfix 1.6  Manual</h1>
+    
+  </header>
+
+  <nav id="panel-left" class="md-nav-expanded">
+    <!-- Nav tabs -->
+    <ul class="tab-tabs nav nav-tabs" role="tablist">
+      <li id="nav-close"> 
+        <button class="hnd-toggle btn btn-default">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </button>
+      </li>
+      
+	  
+        <li role="presentation" class="tab active">
+            <a href="#contents" id="tab-contents" aria-controls="contents" role="tab" data-toggle="tab">
+                <i class="glyphicon glyphicon-list"></i>
+                Contents
+            </a>
+        </li>
+      
+        <li role="presentation" class="tab">
+            <a href="#index" id="tab-index" aria-controls="index" role="tab" data-toggle="tab">
+                <i class="glyphicon glyphicon-asterisk"></i>
+                Index
+            </a>
+        </li>
+      
+        <li role="presentation" class="tab">
+            <a href="#search" id="tab-search" aria-controls="search" role="tab" data-toggle="tab">
+                <i class="glyphicon glyphicon-search"></i>
+                Search
+            </a>
+        </li>
+      
+    </ul>  <!-- /Nav tabs -->
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+	  
+      <div role="tabpanel" class="tab-pane active" id="contents">
+        <div id="toc" class="tree-container unselectable"
+            data-url="_toc.json"
+            data-openlvl="1"
+        >
+            
+        </div>
+      </div>  <!-- /contents-->
+      
+      <div role="tabpanel" class="tab-pane" id="index">
+        <div id="keywords" class="tree-container unselectable"
+            data-url="_keywords.json"
+            data-openlvl="1"
+        >
+            
+        </div>
+      </div>  <!-- /index-->
+      
+      <div role="tabpanel" class="tab-pane" id="search">
+        <div class="search-content">
+          <div class="search-input">
+            <form id="search-form">
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="input-search" name="input-search" placeholder="Search..." />
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </form>
+          </div>  <!-- /search-input -->
+          <div class="search-result">
+            <div id="search-info"></div>
+            <div class="tree-container unselectable" id="search-tree"></div>
+          </div>  <!-- /search-result -->
+        </div>  <!-- /search-content -->
+      </div>  <!-- /search-->
+      
+    </div>  <!-- /Tab panes -->
+
+  </nav>
+
+  <div id="main">
+
+    <article>
+        <div id="topic-content" class="container-fluid" 
+		  data-hnd-id="ExpressionLanguage"
+		  data-hnd-context="78"
+		  data-hnd-title="Expression Language"
+		>
+            
+                <div class="navigation">
+                    <ol class="breadcrumb">
+                        <li><a href="Terminology.html">Terminology</a></li>
+                    </ol>
+                    <div class="nav-arrows">
+                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="Terminology.html" title="Terminology" role="button"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></a><a class="btn btn-default" href="CommaSeparatedList.html" title="Comma-Separated List" role="button"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a><a class="btn btn-default" href="FixedformatData.html" title="Fixed-format Data" role="button"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></div>
+                    </div>
+                </div> 
+            
+
+            <a id="main-content"></a>
+
+            <h2>Expression Language</h2>
+
+            <div class="main-content">
+                
+<p class="rvps2"><span class="rvts26">This page describes the language used for expressions by &nbsp;</span><a class="rvts27" href="eval.html">eval</a><span class="rvts26"> and other CSVfix &nbsp;commands.</span></p>
+<p class="rvps2"><span class="rvts26"><br/></span></p>
+<p class="rvps2"><span class="rvts26">The following data types are supported:</span><br/><span class="rvts26"><br/></span></p>
+<div class="rvps2">
+<table border="1" cellpadding="1" cellspacing="0" style="border-spacing: 0px;">
+ <tr valign="top">
+  <td width="140" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts29">Data Type</span></p>
+  </td>
+  <td width="595" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts29">Description</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="140" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">string</span></p>
+  </td>
+  <td width="595" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">All expression values are stored as strings and can be treated as strings. Strings are denoted by either single or double quotes.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="140" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">number</span></p>
+  </td>
+  <td width="595" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">A value can be treated as a number if it contains a valid real or integer number.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="140" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">boolean</span></p>
+  </td>
+  <td width="595" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">All values can be treated as booleans. An empty string or a numeric value of zero are taken to be false, all other values are true.</span></p>
+  </td>
+ </tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts26"><br/></span></p>
+<p class="rvps2"><span class="rvts26">The following operators are supported:</span><br/><span class="rvts26"><br/></span></p>
+<div class="rvps2">
+<table border="1" cellpadding="1" cellspacing="0" style="border-spacing: 0px;">
+ <tr valign="top">
+  <td width="140" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts29">Operators</span></p>
+  </td>
+  <td width="597" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts29">Description</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="140" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">*&nbsp;/&nbsp;%</span><br/><span class="rvts37">+&nbsp;-&nbsp;</span></p>
+  </td>
+  <td width="597" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Standard arithmetic binary operators. The operands must be numbers.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="140" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">&amp;&amp;&nbsp;||</span></p>
+  </td>
+  <td width="597" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Boolean AND and OR operators - the operands may be of any type but will be treated as booleans. Note there is no NOT operator - see the not() function. also, CSVfix does not currently support short-circuited evaluation using these operators.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="140" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">.</span></p>
+  </td>
+  <td width="597" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">String concatenation - operands may be of any type but will be treated as strings.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="140" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">==&nbsp;&lt;&gt; !=</span><br/><span class="rvts37">&lt;&nbsp;&gt;&nbsp;&lt;=&nbsp;&gt;=</span></p>
+  </td>
+  <td width="597" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Comparison operators - the operands may be of any type. If both operands can be interpreted as numbers then numeric comparison is performed, otherwise a lexical comparison is used.</span></p>
+  </td>
+ </tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts26"><br/></span></p>
+<p class="rvps2"><span class="rvts26"><br/></span></p>
+<p class="rvps2"><span class="rvts26">The following functions are available.</span><br/><span class="rvts26"><br/></span></p>
+<div class="rvps2">
+<table border="1" cellpadding="1" cellspacing="0" style="border-spacing: 0px;">
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts29">Function</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts29">Description</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">abs(num)&nbsp;</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Returns absolute value of num, which must be numeric.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">bool(val)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Converts val to the boolean values 1 (true) or 0 (false)</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">day(d)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">If d is a date in ISO YYYY-MM-DD format, returns the day part, otherwise returns empty string.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">env(name)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Returns the value of the named environment variable, or an empty string if no such variable exists.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">field(i)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Returns the i'th field in the current CSV input record. If the index specified is less than 1, or greater than the number of &nbsp;fields in the current row, returns the empty string.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">find(regex)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Try to match each field in the current CSV record with regex, returning the numeric index of the first match, or 0 if no match is found.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">if(test,v1,v2)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Evaluates the expression test (which itself may consist of expressions and functions) as a boolean value - if the evaluation is true returns the result of evaluating the expression v1,&nbsp;else it returns the result of evaluating v2. CSVfix does not currently support short-circuited evaluation, so both v1 and v2 must be valid expressions - the problems this causes can partially be mitigated by using the -if option of the </span><a class="rvts28" href="eval.html">eval</a><span class="rvts26"> command.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">index(s,list)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Returns 1-based index of s in a comma-separated list. If s is not in the list, returns zero.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">int(num)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Returns the integer part of num, which must be numeric.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">isdate(d)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Returns true if d is a date in ISO YYYY-MM-DD format.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">isempty(str)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Returns true if the string str contains only whitespace or is the empty string, returns false otherwise.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">isint(str)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Returns true if the string str contains an integer, false otherwise.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">isnum(str)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Tests if str is a valid number (either integer or real)</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">len(str)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Return length of string.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">lower(str)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Returns the string sstr converted to lower-case.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">match(str,regex)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Returns true if str matches </span><a class="rvts28" href="RegularExpressions.html">regular expression</a><span class="rvts26">.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">max(a,b)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Returns the larger of the pair a,b. If both can be converted to numbers, numeric comparison is performed, otherwise string comparison is used.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">min(a,b)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">As for max(), but returns minimum value.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">month(d)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">If d is a date in ISO YYYY-MM-DD format, returns the month &nbsp;part, otherwise returns empty string.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">not(bool)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Inverts the boolean sense of bool, which may be of any type.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">pick(i,list)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Picks the 1-based entry in list using i as index. If i is less than one or greater than the number of entries in the list, returns the empty string.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">pos(s1,s2)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Returns the 1-based position of the string s2 in s1, or zero if s1 does not contain s2.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">random()</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Returns random real number in the range 0.0 &lt;= N &lt; 1.0. The generator can be seeded woith the -seed command line option.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">round(num,places)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Returns the number num, rounded to places decimal places.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">sign(num)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Returns the sign of num. Negative numbers return -1, positive numbers 1, zero returns 0.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">streq(s1,s2)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Returns true if string s1 is identical to s2, ignoring case differences.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">substr(s,start,n)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Returns a substring of s starting at start and consisting of a maximum of n characters.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">trim(str)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Returns the string str trimmed of leading and trailing whitespace.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">upper(str)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Returns the string str converted to upper-case.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="188" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">year(d)</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">If d is a date in ISO YYYY-MM-DD format, returns the year &nbsp;part, otherwise returns empty string.</span></p>
+  </td>
+ </tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts26"></span><br/><span class="rvts26"></span><br/><span class="rvts26">The following read-only variables are set before an expression is evaluated. &nbsp;Variable names are case-insensitive.</span><br/><span class="rvts26"><br/></span></p>
+<div class="rvps2">
+<table border="1" cellpadding="1" cellspacing="0" style="border-spacing: 0px;">
+ <tr valign="top">
+  <td width="140" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts29">Variables</span></p>
+  </td>
+  <td width="596" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts29">Description</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="140" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">$1&nbsp;$2&nbsp;...&nbsp;$N</span></p>
+  </td>
+  <td width="596" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Values of the fields in the current CSV input row. If a field variable is used that represents a field that does not exist in the input row, it evaluates as the empty string.</span><br/><span class="rvts26"></span><br/><span class="rvts26">Note you will probably need to </span><a class="rvts28" href="SkipandPass.html">quote</a><span class="rvts26"> eval command options that use field variables to prevent them being interpreted as shell script variables.</span><br/><span class="rvts26"><br/></span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="140" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">$fields</span></p>
+  </td>
+  <td width="596" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">The number of fields in the current input row.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="140" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">$file</span></p>
+  </td>
+  <td width="596" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">The name of the current input file.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="140" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">$line</span></p>
+  </td>
+  <td width="596" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Line number of the current input line in the current file.</span></p>
+  </td>
+ </tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts26"></span><br/><span class="rvts26"></span><br/><span class="rvts26"></span><span class="rvts6"></span></p>
+<p class="rvps4" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/help-authoring-tool">Free help authoring environment</a></p>
+
+            </div>
+            
+            <div id="topic_footer"><div id="topic_footer_content">Copyright &copy; 2013 Neil Butterworth</div></div>
+        </div>  <!-- /#topic-content -->
+    </article>
+
+    <footer></footer>
+
+  </div>  <!-- /#main -->
+
+  <div class="mask" data-toggle="sm-nav-expanded"></div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="hndModal" tabindex="-1" role="dialog" aria-labelledby="hndModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="hndModalLabel"></h4>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary modal-btn-close" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Splitter -->
+  <div id="hnd-splitter" style="left: 350px"></div>  
+
+  <!-- Scripts -->
+  <script src="vendors/jquery-3.5.1/jquery.min.js"></script>
+  <script src="vendors/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+  <script src="vendors/bootstrap-3.4.1/js/ie10-viewport-bug-workaround.js"></script>
+  <script src="vendors/markjs-8.11.1/jquery.mark.min.js"></script>
+  <script src="vendors/uri-1.19.2/uri.min.js"></script>
+  <script src="vendors/imageMapResizer-1.0.10/imageMapResizer.min.js"></script>
+  <script src="vendors/headroom-0.11.0/headroom.min.js"></script>
+  <script src="vendors/jstree-3.3.10/jstree.min.js"></script>  
+  <script src="vendors/interactjs-1.9.22/interact.min.js"></script>  
+
+  <!-- HelpNDoc scripts -->
+  <script src="js/polyfill.object.min.js"></script>
+  <script src="_translations.js"></script>
+  <script src="js/hndsd.min.js"></script>
+  <script src="js/hndse.min.js"></script>
+  <script src="js/app.min.js"></script>
+
+  <!-- Init script -->
+  <script>
+    $(function() {
+      // Create the app
+      var app = new Hnd.App();
+      // Update translations
+      hnd_ut(app);
+	  // Instanciate imageMapResizer
+	  imageMapResize();
+	  // Custom JS
+	  
+      // Boot the app
+      app.Boot();
+    });
+  </script>
+
+
+
+</body>
+
+</html>
+

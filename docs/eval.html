@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="generator" content="HelpNDoc Personal Edition 7.4.0.390">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="favicon.ico"/>
+
+  <title>eval</title>
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="">
+
+
+
+  
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="eval">
+  <meta name="twitter:description" content="">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="eval" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="CSVfix 1.6  Manual" /> 
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendors/bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="vendors/bootstrap-3.4.1/css/ie10-viewport-bug-workaround.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="vendors/html5shiv-3.7.3/html5shiv.min.js"></script>
+      <script src="vendors/respond-1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <!-- JsTree styles -->
+  <link href="vendors/jstree-3.3.10/themes/default/style.min.css" rel="stylesheet"/>
+
+  <!-- Hnd styles -->
+  <link href="css/layout.min.css" rel="stylesheet" />
+  <link href="css/effects.min.css" rel="stylesheet" />
+  <link href="css/theme-light-blue.min.css" rel="stylesheet" />
+  <link href="css/print.min.css" rel="stylesheet" media="print" />
+  <style type="text/css">nav { width: 350px} @media screen and (min-width:769px) { body.md-nav-expanded div#main { margin-left: 350px} body.md-nav-expanded header { padding-left: 364px} }</style>
+
+  <!-- Content style -->
+  <link href="css/hnd.content.css" rel="stylesheet" />
+
+  
+
+
+
+</head>
+
+<body class="md-nav-expanded">
+
+
+
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible">Skip to main content</a>
+  </div>
+
+  <header class="headroom">
+    <button class="hnd-toggle btn btn-default">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>        
+    </button>
+    <h1>CSVfix 1.6  Manual</h1>
+    
+  </header>
+
+  <nav id="panel-left" class="md-nav-expanded">
+    <!-- Nav tabs -->
+    <ul class="tab-tabs nav nav-tabs" role="tablist">
+      <li id="nav-close"> 
+        <button class="hnd-toggle btn btn-default">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </button>
+      </li>
+      
+	  
+        <li role="presentation" class="tab active">
+            <a href="#contents" id="tab-contents" aria-controls="contents" role="tab" data-toggle="tab">
+                <i class="glyphicon glyphicon-list"></i>
+                Contents
+            </a>
+        </li>
+      
+        <li role="presentation" class="tab">
+            <a href="#index" id="tab-index" aria-controls="index" role="tab" data-toggle="tab">
+                <i class="glyphicon glyphicon-asterisk"></i>
+                Index
+            </a>
+        </li>
+      
+        <li role="presentation" class="tab">
+            <a href="#search" id="tab-search" aria-controls="search" role="tab" data-toggle="tab">
+                <i class="glyphicon glyphicon-search"></i>
+                Search
+            </a>
+        </li>
+      
+    </ul>  <!-- /Nav tabs -->
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+	  
+      <div role="tabpanel" class="tab-pane active" id="contents">
+        <div id="toc" class="tree-container unselectable"
+            data-url="_toc.json"
+            data-openlvl="1"
+        >
+            
+        </div>
+      </div>  <!-- /contents-->
+      
+      <div role="tabpanel" class="tab-pane" id="index">
+        <div id="keywords" class="tree-container unselectable"
+            data-url="_keywords.json"
+            data-openlvl="1"
+        >
+            
+        </div>
+      </div>  <!-- /index-->
+      
+      <div role="tabpanel" class="tab-pane" id="search">
+        <div class="search-content">
+          <div class="search-input">
+            <form id="search-form">
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="input-search" name="input-search" placeholder="Search..." />
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </form>
+          </div>  <!-- /search-input -->
+          <div class="search-result">
+            <div id="search-info"></div>
+            <div class="tree-container unselectable" id="search-tree"></div>
+          </div>  <!-- /search-result -->
+        </div>  <!-- /search-content -->
+      </div>  <!-- /search-->
+      
+    </div>  <!-- /Tab panes -->
+
+  </nav>
+
+  <div id="main">
+
+    <article>
+        <div id="topic-content" class="container-fluid" 
+		  data-hnd-id="eval"
+		  data-hnd-context="13"
+		  data-hnd-title="eval"
+		>
+            
+                <div class="navigation">
+                    <ol class="breadcrumb">
+                        <li><a href="Commands.html">Commands</a></li>
+                    </ol>
+                    <div class="nav-arrows">
+                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="Commands.html" title="Commands" role="button"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></a><a class="btn btn-default" href="escape.html" title="escape" role="button"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a><a class="btn btn-default" href="exclude.html" title="exclude" role="button"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></div>
+                    </div>
+                </div> 
+            
+
+            <a id="main-content"></a>
+
+            <h2>eval</h2>
+
+            <div class="main-content">
+                
+<p class="rvps2"><span class="rvts26">The </span><span class="rvts29">eval</span><span class="rvts26"> command provides the ability to perform arithmetic and string manipulation on CSV input fields using a simple</span><a class="rvts27" href="ExpressionLanguage.html"> </a><a class="rvts27" href="ExpressionLanguage.html">expression-based language</a><span class="rvts26">. Each CSV field in a CSV record is assigned to a positional parameter, with $1 being the first, $2 the second, and so on. You can then use simple arithmetic expressions such as ($1&nbsp;+&nbsp;$2)/2, which calculates the average of the first two fields. The results of these expressions are appended to the output, or replace existing fields if the -r flag is used. If you want to remove the base fields that </span><span class="rvts29">eval</span><span class="rvts26"> used from the output, use the -d option.</span><br/><span class="rvts26"></span><br/><span class="rvts26">Note that (depending on your command shell), the field place holders $1, $2 etc. may have a special meaning which will interfere with correct expression evaluation. To be safe, always enclose the expression being evaluated in quotes - single quotes on Linux, double quotes on Windows.</span><br/><span class="rvts26"></span><br/><span class="rvts26">A problem with the eval command is that the if() function in the expression language will always evaluate all &nbsp;of its parameters, which means you cannot write code like this:</span></p>
+<p class="rvps2"><span class="rvts26"><br/></span></p>
+<p class="rvps2"><span class="rvts17">&nbsp; &nbsp; csvfix eval -e 'if( $2 == 0, "divide by zero", $1 / $2 )</span></p>
+<p class="rvps2"><span class="rvts17"><br/></span></p>
+<p class="rvps2"><span class="rvts26">as the divide expression will result in an exception being thrown if $2 contains zero. You can use the -if option to get round this:</span></p>
+<p class="rvps2"><span class="rvts26"><br/></span></p>
+<p class="rvps2"><span class="rvts17">&nbsp; &nbsp; csvfix eval -if '$2 == 0' -e '"divide by zero"', -e '$1 / $2'</span></p>
+<p class="rvps2"><span class="rvts17"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Here, if field $2 contains zero, the divide expression will never be evaluated, and instead the message "divide by zero" is output to the CSV stream.</span></p>
+<p class="rvps2"><span class="rvts26"></span><br/><span class="rvts26">See also: </span><a class="rvts27" href="edit.html">edit</a><span class="rvts26">, </span><a class="rvts27" href="map.html">map</a><span class="rvts26">, </span><a class="rvts27" href="summary.html">summary</a><br/><span class="rvts26"><br/></span></p>
+<div class="rvps2">
+<table border="1" cellpadding="1" cellspacing="0" style="border-spacing: 0px;">
+ <tr valign="top">
+  <td width="140" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts29">Flag</span></p>
+  </td>
+  <td width="62" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts29">Req'd</span><span class="rvts26">?</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts29">Description</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="140" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">-e&nbsp;expr</span></p>
+  </td>
+  <td width="62" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">No</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Specifies an expression to evaluate. The result of the evaluation will be added as a new field to the end of the output row. You may have more than one -e flag - each one adds a new field to the output.</span></p>
+   <p class="rvps2"><span class="rvts26"><br/></span></p>
+   <p class="rvps2"><span class="rvts26">At least one of -e or -r must be specified.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="140" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">-r field,expr</span></p>
+  </td>
+  <td width="62" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">No</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">As for -e, but replace specified field with result of expression evaluation.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="140" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">-d</span></p>
+  </td>
+  <td width="62" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">No</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Discard input data, resulting in output which </span><span class="rvts43">only</span><span class="rvts26"> contains the results of evaluating -r or -e flags. This saves having to pipe the output through </span><a class="rvts28" href="order.html">order</a><span class="rvts26">, if you only want evaluation &nbsp;results.</span></p>
+  </td>
+ </tr>
+ <tr valign="top">
+  <td width="140" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts37">-if expr</span></p>
+  </td>
+  <td width="62" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">No</span></p>
+  </td>
+  <td width="545" valign="top" style="border-style: inset; padding: 1px;">
+   <p class="rvps2"><span class="rvts26">Evaluate the expression. If this results in a true value, then evaluate the next -e option, if the result is false, skip the next -e option, and evaluate the one after that.</span></p>
+  </td>
+ </tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts26"></span><br/><span class="rvts26"></span><br/><span class="rvts26">The following example calculates the average of two temperatures in the </span><a class="rvts27" href="minmaxcsv.html">minmax.csv</a><span class="rvts26"> file:</span><br/><span class="rvts26"></span><br/><span class="rvts37">csvfix&nbsp;eval&nbsp;-e&nbsp;'($2&nbsp;+&nbsp;$3)/2'&nbsp;data/minmax.csv</span><br/><span class="rvts26"></span><br/><span class="rvts26">producing:</span><br/><span class="rvts26"></span><br/><span class="rvts37">"2009-01-01","-5","2","-1.5"</span><br/><span class="rvts37">"2009-01-02","-6","0","-3"</span><br/><span class="rvts37">"2009-01-03","-5","2","-1.5"</span><br/><span class="rvts37">"2009-01-02","-5","4","-0.5"</span><br/><span class="rvts37">"2009-01-02","-3","6","1.5"</span><span class="rvts6"></span></p>
+<p class="rvps4" style="clear: both;"><span class="rvts19">Created with the Personal Edition of HelpNDoc: </span><a class="rvts20" href="https://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Create cross-platform Qt Help files</a></p>
+
+            </div>
+            
+            <div id="topic_footer"><div id="topic_footer_content">Copyright &copy; 2013 Neil Butterworth</div></div>
+        </div>  <!-- /#topic-content -->
+    </article>
+
+    <footer></footer>
+
+  </div>  <!-- /#main -->
+
+  <div class="mask" data-toggle="sm-nav-expanded"></div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="hndModal" tabindex="-1" role="dialog" aria-labelledby="hndModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="hndModalLabel"></h4>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary modal-btn-close" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Splitter -->
+  <div id="hnd-splitter" style="left: 350px"></div>  
+
+  <!-- Scripts -->
+  <script src="vendors/jquery-3.5.1/jquery.min.js"></script>
+  <script src="vendors/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+  <script src="vendors/bootstrap-3.4.1/js/ie10-viewport-bug-workaround.js"></script>
+  <script src="vendors/markjs-8.11.1/jquery.mark.min.js"></script>
+  <script src="vendors/uri-1.19.2/uri.min.js"></script>
+  <script src="vendors/imageMapResizer-1.0.10/imageMapResizer.min.js"></script>
+  <script src="vendors/headroom-0.11.0/headroom.min.js"></script>
+  <script src="vendors/jstree-3.3.10/jstree.min.js"></script>  
+  <script src="vendors/interactjs-1.9.22/interact.min.js"></script>  
+
+  <!-- HelpNDoc scripts -->
+  <script src="js/polyfill.object.min.js"></script>
+  <script src="_translations.js"></script>
+  <script src="js/hndsd.min.js"></script>
+  <script src="js/hndse.min.js"></script>
+  <script src="js/app.min.js"></script>
+
+  <!-- Init script -->
+  <script>
+    $(function() {
+      // Create the app
+      var app = new Hnd.App();
+      // Update translations
+      hnd_ut(app);
+	  // Instanciate imageMapResizer
+	  imageMapResize();
+	  // Custom JS
+	  
+      // Boot the app
+      app.Boot();
+    });
+  </script>
+
+
+
+</body>
+
+</html>
+

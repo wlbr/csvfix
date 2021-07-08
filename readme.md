@@ -30,7 +30,9 @@ I tried to install CSVfix using Homebrew on the Mac but that fails as well, as i
 So the idea of this repository here is:
    * provide a working copy of 1.6 on Github (done, more or less a copy of Pedros repo)
    * provide a release using Github Actions (done)
-   * point Homebrew to the new location (open)
+   * point Homebrew to the new location (-not accepted by Homebrew-)
+
+The docs are available in the `docs` subdirectory, that is being hosted as Github project pages at https://wlbr.de/csvfix
    
 Michael Wolber
 

@@ -1,2 +1,4 @@
 $CSVED trim  data/spaces.csv
 $CSVED trim  -w 1,1,1 data/names.csv
+$CSVED trim  -a data/trim2.csv
+$CSVED trim  -s data/trim2.csv

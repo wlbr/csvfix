@@ -1,1 +1,3 @@
 $CSVED stat data/names.csv
+$CSVED stat -fs   data/army.csv data/books.csv data/numbers.csv
+$CSVED stat -fs -fn data/army.csv

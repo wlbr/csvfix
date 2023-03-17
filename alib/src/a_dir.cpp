@@ -2,6 +2,7 @@
 // a_dir.cpp
 //
 // portable directory listing
+// actually windows only for now
 //
 // Copyright (C) 2009 Neil Butterworth
 //----------------------------------------------------------------------------
@@ -23,10 +24,6 @@ DirListEntry :: DirListEntry() {
 
 DirListEntry :: ~DirListEntry() {
 }
-
-//----------------------------------------------------------------------------
-
-#ifdef ALIB_WINAPI
 
 //----------------------------------------------------------------------------
 // Windows implementation of DirList entry
@@ -189,14 +186,6 @@ const DirListEntry * DirList :: At( unsigned int i ) const {
 	return mEntries[i];
 }
 
-
-//----------------------------------------------------------------------------
-// We only do Win32 at present
-//----------------------------------------------------------------------------
-
-#else
-#error "Windows only at present"
-#endif
 
 //----------------------------------------------------------------------------
 

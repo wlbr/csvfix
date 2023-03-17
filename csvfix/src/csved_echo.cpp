@@ -56,7 +56,7 @@ int EchoCommand :: Execute( ALib::CommandLine & cmd ) {
 	CSVRow row;
 
 	while( io.ReadCSV( row ) ) {
-		if ( ! Skip( row ) ) {
+		if ( ! Skip( io, row ) ) {
 			io.WriteRow( row );
 		}
 	}

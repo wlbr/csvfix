@@ -112,7 +112,7 @@ int TimestampCommand :: Execute( ALib::CommandLine & cmd ) {
 
 	while( io.ReadCSV( row ) ) {
 
-		if ( Skip( row ) ) {
+		if ( Skip( io, row ) ) {
 			continue;
 		}
 

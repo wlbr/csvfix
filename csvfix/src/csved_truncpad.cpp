@@ -143,11 +143,11 @@ int TruncPadBase :: Execute( ALib::CommandLine & cmd ) {
 
 	while( io.ReadCSV( row ) ) {
 
-		if ( Skip( row ) ) {
+		if ( Skip( io, row ) ) {
 			continue;
 		}
 
-		if ( ! Pass( row ) ) {
+		if ( ! Pass( io, row ) ) {
 			unsigned int nc = ncolspec ? ncols : row.size() + padding.Size();
 			ProcessRow( row, nc, padding );
 		}

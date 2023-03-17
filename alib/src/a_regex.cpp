@@ -22,6 +22,8 @@
 
 using std::string;
 using std::vector;
+using std::cout;
+using std::endl;
 
 //------------------------------------------------------------------------
 // Begin ALib stuff
@@ -111,6 +113,8 @@ bool RegEx::Pos :: Found() const {
 //---------------------------------------------------------------------------
 // Bitmap used to represent char ranges, one bit for each character in a
 // range. Only chars with ASCII codes 0 to 127 are supported.
+//
+// Note: Now extended experimentally to codes 0 to 255.
 //---------------------------------------------------------------------------
 
 class RegEx::CharBitMap {
@@ -162,7 +166,7 @@ class RegEx::CharBitMap {
 
 	private:
 
-		enum { MAXSIZE = 128 };
+		enum { MAXSIZE = 256 };
 		std::bitset <MAXSIZE> mBits;
 };
 
@@ -343,7 +347,7 @@ void RegEx::Encoding ::AddToSavedPat( unsigned char c,
 
 //----------------------------------------------------------------------------
 // Clear the saved patter referenced by the tag of encoding entre ei down to
-// length specified by len.
+// length specified by len. Clear all saved patterns after the one specified.
 //----------------------------------------------------------------------------
 
 void RegEx::Encoding :: ClearSavedPat( unsigned int  ei,
@@ -351,6 +355,9 @@ void RegEx::Encoding :: ClearSavedPat( unsigned int  ei,
 	unsigned int i = mEntries.at(ei).Tag();
 	if ( i ) {
 		mSaved.at(i - 1).resize( len );
+        for ( int j = i; j < mSaved.size(); j++ ) {
+            mSaved.at(j).clear();
+        }
 	}
 }
 
@@ -1004,6 +1011,26 @@ DEFTEST( RepSaved ) {
 }
 
 
+DEFTEST( RepMulti1 )  {     // note no closure
+    string s = "ABC1234xyz";
+    RegEx re1( "\\(...\\)\\(....\\)\\(...\\)" );
+	RegEx::Pos p = re1.FindIn( s );
+	FAILNE( p.Found(), true );
+	re1.ReplaceIn( s, "(\\1)(\\2)(\\3)" );
+	FAILNE( s, "(ABC)(1234)(xyz)" );
+}
+
+
+DEFTEST( RepMulti2 )  {     // note closure
+    string s = "ABC1234xyz";
+    RegEx re1( "\\(...\\)\\(.*\\)\\(...\\)" );
+	RegEx::Pos p = re1.FindIn( s );
+	FAILNE( p.Found(), true );
+	re1.ReplaceIn( s, "(\\1)(\\2)(\\3)" );
+	FAILNE( s, "(ABC)(1234)(xyz)" );
+}
+
+
 DEFTEST( RepAll ) {
 
 	string s = "1x234x5y6";
@@ -1038,6 +1065,7 @@ DEFTEST( EmptyStr ) {
 	p = re3.FindIn( s );
 	FAILNE( p.Found(), false );
 }
+
 
 #endif
 

@@ -23,8 +23,11 @@ _OBJS = a_chsrc.o a_csv.o a_enc.o a_env.o a_except.o \
 
 OBJS = $(patsubst %,$(ODIR)/%,$(_OBJS))
 
-_WINOBJS = a_db.o a_dir.o a_opsys.o a_winerr.o
+_WINOBJS = a_db.o a_dir.o a_opsys.o a_winerr.o a_winenv.o
 WINOBJS = $(patsubst %,$(ODIR)/%,$(_WINOBJS))
+
+_LINOBJS = a_linenv.o
+LINOBJS = $(patsubst %,$(ODIR)/%,$(_LINOBJS))
 
 _EXPAT = xmlparse.o  xmlrole.o  xmltok.o  xmltok_impl.o  xmltok_ns.o
 EXPAT = $(patsubst %,$(ODIR)/%,$(_EXPAT))
@@ -38,7 +41,7 @@ $(ODIR)/%.o: $(XDIR)/%.cpp
 win: $(OBJS) $(EXPAT) $(WINOBJS)
 	ar rvs $(OUT) $^
 
-lin: $(OBJS) $(EXPAT) 
+lin: $(OBJS) $(EXPAT)  $(LINOBJS)
 	ar rvs $(OUT) $^
 
 .PHONY: clean

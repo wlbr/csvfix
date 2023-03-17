@@ -75,7 +75,7 @@ int AsciiTableCommand :: Execute( ALib::CommandLine & cmd ) {
 	IOManager io( cmd );
 	CSVRow row;
 	while( io.ReadCSV( row ) ) {
-		if ( ! Skip( row ) ) {
+		if ( ! Skip( io, row ) ) {
 			AddRow( row );
 		}
 	}

@@ -110,7 +110,7 @@ int CmpRow( const CSVRow & a, const CSVRow & b, const FieldList & f ) {
 // Get field or empty string if field does not exist
 //----------------------------------------------------------------------------
 
-std:: string GetField( const CSVRow & row, unsigned int  i ) {
+std::string GetField( const CSVRow & row, unsigned int  i ) {
 	return i >= row.size() ? "" : row[i];
 }
 

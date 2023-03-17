@@ -1,0 +1,3 @@
+$CSVED pivot -c 2 -r 1 -f 4  -a sum data/pivot.csv
+$CSVED pivot -c 2 -r 1 -f 4  -a count data/pivot.csv
+$CSVED pivot -c 2 -r 1 -f 4  -a avg data/pivot.csv

@@ -327,7 +327,7 @@ int SQLInsertCommand ::	Execute( ALib::CommandLine & cmd ) {
 	CSVRow row;
 
 	while( io.ReadCSV( row ) ) {
-		if ( ! Skip( row ) ) {
+		if ( ! Skip( io, row ) ) {
 			io.Out() << CreateInsertSQL( TableName(), row );
 			io.Out() << Separator();
 		}
@@ -446,7 +446,7 @@ int SQLUpdateCommand ::	Execute( ALib::CommandLine & cmd ) {
 	CSVRow row;
 
 	while( io.ReadCSV( row ) ) {
-		if ( ! Skip( row ) ) {
+		if ( ! Skip( io, row ) ) {
 			io.Out() << CreateUpdateSQL( TableName(), row );
 			io.Out() << Separator();
 		}
@@ -533,7 +533,7 @@ int SQLDeleteCommand :: Execute( ALib::CommandLine & cmd ) {
 	CSVRow row;
 
 	while( io.ReadCSV( row ) ) {
-		if ( ! Skip( row ) ) {
+		if ( ! Skip( io, row ) ) {
 			io.Out() << CreateDeleteSQL( TableName(), row );
 			io.Out() << Separator();
 		}

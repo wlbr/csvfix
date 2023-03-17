@@ -34,6 +34,7 @@ const char * const PRINTF_HELP = {
 	"  -fmt fmt\tspecify fields and printf-style formatters\n"
 	"  -f fields\tfield order to pass to formatter\n"
 	"  -q\t\tapply CSV quoting to each printf conversion\n"
+	"  -csv\t\ttreat output as CSV field and append to input row\n"
 	"#SMQ,SEP,IBL,IFN,OFL,SEP,SKIP,PASS"
 };
 
@@ -48,7 +49,7 @@ PrintfCommand :: PrintfCommand( const string & name,
 	AddFlag( ALib::CommandLineFlag( FLAG_FMT, true, 1 ) );
 	AddFlag( ALib::CommandLineFlag( FLAG_COLS, false, 1 ) );
 	AddFlag( ALib::CommandLineFlag( FLAG_QUOTE, false, 0 ) );
-
+	AddFlag( ALib::CommandLineFlag( FLAG_CSV, false, 0 ) );
 }
 
 //----------------------------------------------------------------------------
@@ -59,7 +60,10 @@ int PrintfCommand :: Execute( ALib::CommandLine & cmd ) {
 
 	GetSkipOptions( cmd );
 	string fmt = cmd.GetValue( FLAG_FMT );
+
+    NotBoth( cmd, FLAG_QUOTE, FLAG_CSV );
 	mCSVQuote = cmd.HasFlag( FLAG_QUOTE );
+    bool csv = cmd.HasFlag( FLAG_CSV );
 
 	ParseFormat( fmt );
 	if ( cmd.HasFlag( FLAG_COLS ) ) {
@@ -74,12 +78,16 @@ int PrintfCommand :: Execute( ALib::CommandLine & cmd ) {
 	IOManager io( cmd );
 
 	while( io.ReadCSV( row ) ) {
-		if ( Skip( row ) ) {
+		if ( Skip( io, row ) ) {
 			continue;
 		}
-		if ( Pass( row ) ) {
+		if ( Pass( io, row ) ) {
 			io.WriteRow( row );
 		}
+		if ( csv ) {
+            row.push_back( FormatRow( row ) );
+            io.WriteRow( row );
+        }
 		else {
 			string line = FormatRow( row );
 			io.Out() << line << std::endl;
@@ -252,6 +260,30 @@ PrintfCommand::Format PrintfCommand :: GetFormat( unsigned int & pos,
 }
 
 //----------------------------------------------------------------------------
+// Handle backslash escape characters
+//---------------------------------------------------------------------------
+
+static char GetEscaped( const string & fmt, unsigned int & pos ) {
+    char c = Peek( pos++, fmt );
+    if ( c == 0 ) {
+        CSVTHROW( "Invalid escape" );
+    }
+    else if ( c == 'n' ) {
+        return '\n';
+    }
+    else if ( c == 'r' ) {
+        return '\r';
+    }
+    else if ( c == 't' ) {
+        return '\t';
+    }
+    else {
+        return c;
+    }
+
+}
+
+//----------------------------------------------------------------------------
 // literals are things not beginning with '%'
 //----------------------------------------------------------------------------
 
@@ -259,7 +291,12 @@ PrintfCommand::Format PrintfCommand :: GetLiteral( unsigned int & pos,
 														const string & fmt ) {
 	string lit;
 	while( pos < fmt.size() && fmt[pos] != '%' ) {
-		lit += fmt[pos++];
+        if ( fmt[pos] == '\\' ) {
+            lit += GetEscaped( fmt, ++pos );
+        }
+        else {
+            lit += fmt[pos++];
+        }
 	}
 	return Format( Literal, lit );
 }

@@ -88,6 +88,7 @@
 		<Unit filename="inc/csved_dsv.h" />
 		<Unit filename="inc/csved_echo.h" />
 		<Unit filename="inc/csved_edit.h" />
+		<Unit filename="inc/csved_erase.h" />
 		<Unit filename="inc/csved_escape.h" />
 		<Unit filename="inc/csved_eval.h" />
 		<Unit filename="inc/csved_evalvars.h" />
@@ -111,10 +112,12 @@
 		<Unit filename="inc/csved_number.h" />
 		<Unit filename="inc/csved_odbc.h" />
 		<Unit filename="inc/csved_order.h" />
+		<Unit filename="inc/csved_pivot.h" />
 		<Unit filename="inc/csved_printf.h" />
 		<Unit filename="inc/csved_put.h" />
 		<Unit filename="inc/csved_readmulti.h" />
 		<Unit filename="inc/csved_rmnewline.h" />
+		<Unit filename="inc/csved_rsort.h" />
 		<Unit filename="inc/csved_rules.h" />
 		<Unit filename="inc/csved_seq.h" />
 		<Unit filename="inc/csved_shuffle.h" />
@@ -122,6 +125,7 @@
 		<Unit filename="inc/csved_sparse.h" />
 		<Unit filename="inc/csved_split.h" />
 		<Unit filename="inc/csved_sql.h" />
+		<Unit filename="inc/csved_squash.h" />
 		<Unit filename="inc/csved_stat.h" />
 		<Unit filename="inc/csved_strings.h" />
 		<Unit filename="inc/csved_sum.h" />
@@ -149,6 +153,7 @@
 		<Unit filename="src/csved_dsv.cpp" />
 		<Unit filename="src/csved_echo.cpp" />
 		<Unit filename="src/csved_edit.cpp" />
+		<Unit filename="src/csved_erase.cpp" />
 		<Unit filename="src/csved_escape.cpp" />
 		<Unit filename="src/csved_eval.cpp" />
 		<Unit filename="src/csved_evalvars.cpp" />
@@ -173,10 +178,12 @@
 		<Unit filename="src/csved_number.cpp" />
 		<Unit filename="src/csved_odbc.cpp" />
 		<Unit filename="src/csved_order.cpp" />
+		<Unit filename="src/csved_pivot.cpp" />
 		<Unit filename="src/csved_printf.cpp" />
 		<Unit filename="src/csved_put.cpp" />
 		<Unit filename="src/csved_readmulti.cpp" />
 		<Unit filename="src/csved_rmnewline.cpp" />
+		<Unit filename="src/csved_rsort.cpp" />
 		<Unit filename="src/csved_rules.cpp" />
 		<Unit filename="src/csved_seq.cpp" />
 		<Unit filename="src/csved_shuffle.cpp" />
@@ -184,6 +191,7 @@
 		<Unit filename="src/csved_sparse.cpp" />
 		<Unit filename="src/csved_split.cpp" />
 		<Unit filename="src/csved_sql.cpp" />
+		<Unit filename="src/csved_squash.cpp" />
 		<Unit filename="src/csved_stat.cpp" />
 		<Unit filename="src/csved_sum.cpp" />
 		<Unit filename="src/csved_template.cpp" />
@@ -348,6 +356,7 @@
 		<Unit filename="tests/tests/src2test/csved_diff.cpp.test" />
 		<Unit filename="tests/tests/src2test/csved_fromxml.cpp.test" />
 		<Unit filename="tests/tests/src2test/csved_join.cpp.test" />
+		<Unit filename="tests/tests/stat.test" />
 		<Unit filename="tests/tests/template.test" />
 		<Unit filename="tests/tests/toxml.test" />
 		<Unit filename="tests/tests/trim.test" />

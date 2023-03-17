@@ -1,0 +1,4 @@
+$CSVED rowsort data/rsort.csv
+$CSVED rowsort -n  data/rsort.csv
+$CSVED rowsort -n -d data/rsort.csv
+

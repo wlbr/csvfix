@@ -49,8 +49,8 @@ class Command {
 		void AddFlag( const ALib::CommandLineFlag & f );
 
 		void GetSkipOptions( const ALib::CommandLine & cl );
-		bool Skip( const CSVRow & r );
-		bool Pass( const CSVRow & r );
+		bool Skip( IOManager & io, const CSVRow & r );
+		bool Pass( IOManager & io, const CSVRow & r );
 
 	private:
 

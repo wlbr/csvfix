@@ -1,0 +1,4 @@
+$CSVED write_multi -m 1,2 -rs '-----' -smq data/wmulti.csv
+$CSVED write_multi -m 1,2 -rs '\n' -smq data/wmulti.csv
+
+

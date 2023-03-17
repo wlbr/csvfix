@@ -67,10 +67,10 @@ int MapCommand :: Execute( ALib::CommandLine & cmd ) {
 	IOManager io( cmd );
 
 	while( io.ReadCSV( mRow ) ) {
-		if ( Skip( mRow ) ) {
+		if ( Skip( io, mRow ) ) {
 			continue;
 		}
-		if ( ! Pass( mRow ) ) {
+		if ( ! Pass( io, mRow ) ) {
 			DoMapping();
 		}
 		io.WriteRow( mRow );

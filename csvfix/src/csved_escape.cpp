@@ -103,10 +103,10 @@ int EscCommand ::	Execute( ALib::CommandLine & cmd ) {
 	CSVRow row;
 
 	while( io.ReadCSV( row ) ) {
-		if ( Skip( row ) ) {
+		if ( Skip( io, row ) ) {
 			continue;
 		}
-		if( ! Pass( row ) ) {
+		if( ! Pass( io, row ) ) {
 			EscapeRow( row );
 		}
 		io.WriteRow( row, cmd.HasFlag( FLAG_ESCOFF) );

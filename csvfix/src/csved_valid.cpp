@@ -89,7 +89,7 @@ int ValidateCommand :: Execute( ALib::CommandLine & cmd ) {
 	bool errcode = cmd.HasFlag( FLAG_ERRCODE );
 
 	while( io.ReadCSV( row ) ) {
-		if ( Skip( row ) ) {
+		if ( Skip( io, row ) ) {
 			continue;
 		}
 		int errcount = 0;

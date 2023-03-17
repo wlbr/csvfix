@@ -268,7 +268,7 @@ int ToXMLCommand :: Execute( ALib::CommandLine & cmd ) {
 		std::unique_ptr <XMLSpecTag> root( ReadSpec( mXMLSpec ) );
 		vector <CSVRow> input;
 		while( io.ReadCSV( row ) ) {
-			if ( ! Skip( row ) ) {
+			if ( ! Skip( io, row ) ) {
 				input.push_back( row );
 			}
 		}

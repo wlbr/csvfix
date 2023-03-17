@@ -12,6 +12,7 @@
 #include "csved_command.h"
 #include "csved_except.h"
 #include "csved_strings.h"
+#include "csved_evalvars.h"
 
 using std::string;
 using std::vector;
@@ -106,9 +107,12 @@ static void SetPosParams( ALib::Expression & e, const CSVRow & r ) {
 	}
 }
 
-static bool EvalSkipPass( ALib::Expression & e, const CSVRow & r ) {
+static bool EvalSkipPass( ALib::Expression & e, const CSVRow & r, IOManager & io ) {
 	if ( e.IsCompiled() ) {
 		SetPosParams( e, r );
+        e.AddVar( LINE_VAR, ALib::Str( io.CurrentLine() ));
+        e.AddVar( FILE_VAR, ALib::Str( io.CurrentFileName()));
+        e.AddVar( FIELD_VAR, ALib::Str( r.size()));
 		string ev = e.Evaluate();
 		return ev == "0" ? false : true;
 	}
@@ -117,12 +121,12 @@ static bool EvalSkipPass( ALib::Expression & e, const CSVRow & r ) {
 	}
 }
 
-bool Command :: Skip( const CSVRow & r  )  {
-	return EvalSkipPass( mSkipExpr, r );
+bool Command :: Skip( IOManager & io, const CSVRow & r  )  {
+	return EvalSkipPass( mSkipExpr, r, io );
 }
 
-bool Command :: Pass( const CSVRow & r )  {
-	return EvalSkipPass( mPassExpr, r );
+bool Command :: Pass( IOManager &io, const CSVRow & r )  {
+	return EvalSkipPass( mPassExpr, r, io );
 }
 
 //----------------------------------------------------------------------------

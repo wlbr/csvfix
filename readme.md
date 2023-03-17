@@ -10,7 +10,7 @@ For further information, please see the CSVfix website
 at http://neilb.bitbucket.org/csvfix/
 
 Neil Butterworth
-13-Apr-2014
+13-Nov-2014
 
 
 -----
@@ -25,10 +25,12 @@ the code from the Google Code repo, but none of them compiles correctly on Linux
 the mentioned [1.6 on Sourceforce](https://sourceforge.net/projects/csvfix/) that was brought 
 there by [Pedro Albanese](https://sourceforge.net/u/pedroalbanese/profile/). That one works!
 
+UPDATE : A zip of version 1.7 was discovered on a backup drive by [@the-reverend](https://github.com/the-reverend) and it also builds!
+
 I tried to install CSVfix using Homebrew on the Mac but that fails as well, as it tries to use the dead Bitbucket repo.
 
 So the idea of this repository here is:
-   * provide a working copy of 1.6 on Github (done, more or less a copy of Pedros repo)
+   * provide a working copy of 1.7 on Github (done, more or less a copy of [@the-reverend](https://github.com/the-reverend)'s backup)
    * provide a release using Github Actions (done)
    * point Homebrew to the new location (-not accepted by Homebrew-)
 

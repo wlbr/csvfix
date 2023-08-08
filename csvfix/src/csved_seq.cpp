@@ -79,10 +79,10 @@ int SeqCommand :: Execute( ALib::CommandLine & cmd ) {
 	CSVRow row;
 
 	while( io.ReadCSV( row ) ) {
-		if( Skip( row ) ) {
+		if( Skip( io, row ) ) {
 			continue;
 		}
-		if ( ! Pass( row ) ) {
+		if ( ! Pass( io, row ) ) {
 			AddSeq( row );
 		}
 		io.WriteRow( row );

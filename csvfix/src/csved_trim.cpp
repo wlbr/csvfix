@@ -36,6 +36,8 @@ const char * const TRIM_HELP = {
 	"  -f fields\tfields to trim (default is all)\n"
 	"  -l\t\ttrim leading whitespace\n"
 	"  -t\t\ttrim trailing whitespace\n"
+	"  -a\t\tremove all whitespace\n"
+    "  -s\t\ttrim all multiple whitespace to single space\n"
 	"  -w widths\tspecifies widths to truncate fields to\n"
 	"#ALL,SKIP,PASS"
 };
@@ -52,6 +54,8 @@ TrimCommand ::	TrimCommand( const string & name,
 	AddFlag( ALib::CommandLineFlag( FLAG_TRLEAD, false, 0 ) );
 	AddFlag( ALib::CommandLineFlag( FLAG_TRTRAIL, false, 0 ) );
 	AddFlag( ALib::CommandLineFlag( FLAG_WIDTH, false, 1 ) );
+	AddFlag( ALib::CommandLineFlag( FLAG_ALL, false, 0 ) );
+	AddFlag( ALib::CommandLineFlag( FLAG_SINGLE, false, 0 ) );
 }
 
 //----------------------------------------------------------------------------
@@ -89,6 +93,13 @@ int TrimCommand ::	Execute( ALib::CommandLine & cmd ) {
 		GetWidths( cmd.GetValue( FLAG_WIDTH ) );
 	}
 
+    mTrimAll = cmd.HasFlag( FLAG_ALL );
+    mTrim2Single = cmd.HasFlag( FLAG_SINGLE );
+
+    if ( mTrimAll && mTrim2Single )  {
+        CSVTHROW( "Cannot use both " << FLAG_ALL << " and " << FLAG_SINGLE );
+    }
+
 	ALib::CommaList cl( cmd.GetValue( FLAG_COLS, "" ) );
 	CommaListToIndex( cl, mFields );
 
@@ -96,11 +107,11 @@ int TrimCommand ::	Execute( ALib::CommandLine & cmd ) {
 	CSVRow row;
 
 	while( io.ReadCSV( row ) ) {
-		if ( Skip( row ) ) {
+		if ( Skip( io, row ) ) {
 			continue;
 		}
 
-		if ( ! Pass( row ) ) {
+		if ( ! Pass( io, row ) ) {
 			Trim( row );
 		}
 		io.WriteRow( row );
@@ -134,6 +145,46 @@ void TrimCommand :: Chop( CSVRow & row, unsigned int  i ) {
 }
 
 //---------------------------------------------------------------------------
+// Remove all whitespace
+//---------------------------------------------------------------------------
+
+static string TrimAll( const string & s ) {
+    string result;
+    for ( auto c : s ) {
+        if ( ! std::isspace( c ) ) {
+            result += c;
+        }
+    }
+    return result;
+}
+
+//---------------------------------------------------------------------------
+// Reduce multiple whitespace to single space
+//---------------------------------------------------------------------------
+
+static string Trim2Single( const string & s ) {
+    string result;
+    bool havespace = false;
+    for ( auto c : s ) {
+        if ( std::isspace( c ) ) {
+            if ( havespace ){
+                continue;
+            }
+            else {
+                result += ' ';
+                havespace = true;
+            }
+        }
+        else {
+            result += c;
+            havespace = false;
+        }
+    }
+    return result;
+}
+
+
+//---------------------------------------------------------------------------
 // Trim fields of row. Always perform whitespace removal and only perform
 // width reductions if widths specified.
 //---------------------------------------------------------------------------
@@ -151,6 +202,13 @@ void TrimCommand :: Trim( CSVRow & row ) {
 				row[i] = ALib::RTrim( row[i] );
 			}
 		}
+
+		if ( mTrimAll ) {
+            row[i] = TrimAll( row[i] );
+        }
+        else if ( mTrim2Single ) {
+            row[i] = Trim2Single( row[i] );
+        }
 
 		if (  mWidths.size() ) {
 			if ( mFields.size() == 0 || ALib::Contains( mFields, i ) ) {

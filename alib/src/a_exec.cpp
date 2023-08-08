@@ -41,7 +41,7 @@ void Executor :: ClosePipe() {
 // Execute this or stored command, returning stream containing stout
 //----------------------------------------------------------------------------
 
-std::istream &  Executor:: Exec( const string & cmd  ) {
+std::istream &  Executor:: Exec( const string & cmd, int ignorexit  ) {
 
 	if ( cmd != "" ) {
 		mCmd = cmd;
@@ -69,7 +69,7 @@ std::istream &  Executor:: Exec( const string & cmd  ) {
 		mPipe = 0;
 	}
 
-	if ( rv ) {
+	if ( rv && rv > ignorexit ) {
 		mStream->setstate( std::ios::failbit );
 	}
 

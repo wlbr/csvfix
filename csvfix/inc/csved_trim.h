@@ -32,7 +32,7 @@ class TrimCommand : public Command {
 		void Chop( CSVRow & row, unsigned int  i );
 
 		FieldList mFields;
-		bool mTrimLead, mTrimTrail;
+		bool mTrimLead, mTrimTrail, mTrimAll, mTrim2Single;
 		std::vector <int> mWidths;
 
 

@@ -109,7 +109,7 @@ void CSVChecker :: ReadQuotedField( CSVRow & r ) {
 				Error( "Unexpected double-quote", true );
 			}
 		}
-		else {
+		else if ( mNext == REC_SEP ) {
 			if ( mEmbedNLOK ) {
 				field += mNext;
 			}

@@ -1,10 +1,16 @@
 //---------------------------------------------------------------------------
 // csved_split.cpp
 //
-// split single field to multple fields
-// can split on specific character or on transitions between char types
+// split single field to multiple fields
+// can split on:
 //
-// Copyright (C) 2009 Neil Butterworth
+//      specific character
+//      transitions between char types
+//      field position and length
+//      field length (with one variable length field)
+//      regular expression match
+//
+// Copyright (C) 2014 Neil Butterworth
 //---------------------------------------------------------------------------
 
 #include "a_base.h"
@@ -19,16 +25,15 @@ using std::vector;
 namespace CSVED {
 
 //----------------------------------------------------------------------------
-// Transition split values
+// Transition split options
 //----------------------------------------------------------------------------
 
-const char * const FLAG_TRANA2N	= "-tan";
-const char * const FLAG_TRANN2A	= "-tna";
+const char * const FLAG_TRANA2N	= "-tan";   // from alpha to digit
+const char * const FLAG_TRANN2A	= "-tna";   // from digit to alpha
 
 //---------------------------------------------------------------------------
-// Register split command
+// Register split commands
 //---------------------------------------------------------------------------
-
 
 static RegisterCommand <SplitFixed> rc1_(
 	CMD_SPLFIX,
@@ -37,6 +42,11 @@ static RegisterCommand <SplitFixed> rc1_(
 
 static RegisterCommand <SplitChar> rc2_(
 	CMD_SPLCHR,
+	"split using regular expression"
+);
+
+static RegisterCommand <SplitRegex> rc3_(
+	CMD_SPLREGEX,
 	"split at character or character type transition"
 );
 
@@ -50,10 +60,21 @@ const char * const FSPLIT_HELP = {
 	"where flags are:\n"
 	"  -f field\tindex of the field to be split\n"
 	"  -p plist\tlist of positions to split, in start:len format\n"
+	"  -l lengths\tlengths of fields to split (mutually exclusive with -p)\n"
 	"  -k\t\tretain field being split in output (default is discard it)\n"
 	"#ALL,SKIP,PASS"
 };
 
+const char * const RESPLIT_HELP = {
+	"split using regular expression\n"
+	"usage: csvfix split_fixed  [flags] [file ...]\n"
+	"where flags are:\n"
+	"  -f field\tindex of the field to be split\n"
+	"  -r regex\tregular expression to use to perform split\n"
+	"  -ic\t\tignore case when matching regular expressions\n"
+	"  -k\t\tretain field being split in output (default is discard it)\n"
+	"#ALL,SKIP,PASS"
+};
 const char * const CSPLIT_HELP = {
 	"split CSV field at specific character(s) or character type transition\n"
 	"usage: csvfix split_char  [flags] [file ...]\n"
@@ -118,6 +139,63 @@ void SplitBase :: Insert( CSVRow & row, const CSVRow & split ) {
 	row.swap( tmp );
 }
 
+//---------------------------------------------------------------------------
+// Split via regular expression
+//---------------------------------------------------------------------------
+
+SplitRegex :: SplitRegex( const string & name,
+							const string & desc )
+	: SplitBase( name, desc, RESPLIT_HELP ) {
+	AddFlag( ALib::CommandLineFlag( FLAG_REGEX, true, 1 ) );
+	AddFlag( ALib::CommandLineFlag( FLAG_ICASE, false, 0 ) );
+}
+
+//---------------------------------------------------------------------------
+// Split using bracketed exressions then recall and insert into row.
+//---------------------------------------------------------------------------
+
+void SplitRegex :: Split( CSVRow & row ) {
+    CSVRow tmp;
+    string target = Field() < row.size() ? row[ Field() ] : "";
+    mRegex.FindIn( target );
+    for( unsigned int i = 0; i < mRegex.SavedMatchCount(); i++ ) {
+        tmp.push_back( mRegex.SavedMatch(i) );
+    }
+    Insert( row, tmp );
+}
+
+//---------------------------------------------------------------------------
+// Perform regex split.
+//---------------------------------------------------------------------------
+
+int SplitRegex :: Execute( ALib::CommandLine & cmd ) {
+
+	GetSkipOptions( cmd );
+	GetCommonFlags( cmd );
+
+    string rs = cmd.GetValue( FLAG_REGEX );
+    bool ic = cmd.HasFlag( FLAG_ICASE );
+    ALib::RegEx::CaseSense cs = ic  ? ALib::RegEx::Insensitive
+                                    : ALib::RegEx::Sensitive;
+    mRegex = ALib::RegEx( rs, cs );
+
+	IOManager io( cmd );
+	CSVRow row;
+
+	while( io.ReadCSV( row ) ) {
+		if ( Skip( io, row ) ) {
+			continue;
+		}
+		if( ! Pass( io,row ) ) {
+            Split( row );
+		}
+		io.WriteRow( row );
+	}
+
+	return 0;
+}
+
+
 //------------------------------------------------------------------------
 // Split by fixed positions in field
 //---------------------------------------------------------------------------
@@ -125,7 +203,74 @@ void SplitBase :: Insert( CSVRow & row, const CSVRow & split ) {
 SplitFixed :: SplitFixed( const string & name,
 							const string & desc )
 	: SplitBase( name, desc, FSPLIT_HELP ) {
-	AddFlag( ALib::CommandLineFlag( FLAG_POS, true, 1 ) );
+	AddFlag( ALib::CommandLineFlag( FLAG_POS, false, 1 ) );
+	AddFlag( ALib::CommandLineFlag( FLAG_FLEN, false, 1 ) );
+}
+
+
+//---------------------------------------------------------------------------
+// Create list of field lengths. One field is allowed to be of variable
+// length, which for each record will evaluate to the length of the input
+// minus the lengths of all the fixed length fields.
+//---------------------------------------------------------------------------
+
+const string VARLEN = "*";   // variable length
+
+void SplitFixed :: CreateLengths( const string & ls ) {
+    ALib::CommaList cl( ls );
+    bool havevar = false;
+    for( unsigned int i = 0; i < cl.Size(); i++ ) {
+        string len = cl.At( i );
+        if ( len == VARLEN ) {
+            if ( havevar ) {
+                CSVTHROW( "Only a single variable-length field is allowed" );
+            }
+            havevar = true;
+            mLengths.push_back( 0 );    // variable length indicator
+        }
+        else if ( ALib::IsInteger( len ) ) {
+            int l = ALib::ToInteger( len );
+            if ( l <= 0 ) {
+                CSVTHROW( "Invalid field length: " << len );
+            }
+            mLengths.push_back( l );
+        }
+        else {
+            CSVTHROW( "Invalid field length: " << len );
+        }
+    }
+}
+
+//---------------------------------------------------------------------------
+// Split using field lengths. If a variable length field (length 0) was
+// specified, its length is the length of the input minus the lengths of all 
+// the other fields.
+//---------------------------------------------------------------------------
+
+void SplitFixed :: SplitLengths( CSVRow & row ) {
+    string target = Field() < row.size() ? row[ Field() ] : "";
+    int flens =0;
+    for (unsigned int i = 0; i < mLengths.size(); i++) {
+        flens += mLengths[i];
+    }
+    int vlen = target.size() - flens;
+    if ( vlen < 0 ) {
+        vlen = 0;
+    }
+    CSVRow tmp;
+    int pos = 0;
+    for (unsigned int i = 0; i < mLengths.size(); i++) {
+        int len = mLengths[i];
+        if ( len == 0 ) {
+            tmp.push_back( vlen == 0 ? "" : target.substr( pos, vlen ));
+            pos += vlen;
+        }
+        else {
+            tmp.push_back( target.substr( pos, len ) );
+            pos += len;
+        }
+    }
+    Insert( row, tmp );
 }
 
 //---------------------------------------------------------------------------
@@ -134,30 +279,45 @@ SplitFixed :: SplitFixed( const string & name,
 
 int SplitFixed :: Execute( ALib::CommandLine & cmd ) {
 
+    NotBoth( cmd, FLAG_POS, FLAG_FLEN );
 	GetSkipOptions( cmd );
 	GetCommonFlags( cmd );
-	string pos = cmd.GetValue( FLAG_POS );
 
-	if ( ALib::IsEmpty( pos ) ) {
-		CSVTHROW( "Need list of position pairs specified by " << FLAG_POS );
-	}
-
-	CreatePositions( pos );
+	if ( cmd.HasFlag( FLAG_POS ) ) {
+        string pos = cmd.GetValue( FLAG_POS );
+        if ( ALib::IsEmpty( pos ) ) {
+            CSVTHROW( "Need list of position pairs specified by " << FLAG_POS );
+        }
+        CreatePositions( pos );
+    }
+    else if ( cmd.HasFlag( FLAG_FLEN ) ) {
+        string lens = cmd.GetValue( FLAG_FLEN );
+        if ( ALib::IsEmpty( lens ) ) {
+            CSVTHROW( "Need list of lengths specified by " << FLAG_FLEN );
+        }
+        CreateLengths( lens );
+    }
+    else {
+        CSVTHROW( "Need one of" << FLAG_POS << " or " << FLAG_FLEN );
+    }
 
 	IOManager io( cmd );
 	CSVRow row;
 
 	while( io.ReadCSV( row ) ) {
-		if ( Skip( row ) ) {
+		if ( Skip( io, row ) ) {
 			continue;
 		}
-		if( ! Pass( row ) ) {
-			Split( row );
+		if( ! Pass( io,row ) ) {
+            if ( mLengths.size() ) {
+                SplitLengths( row );
+            }
+            else {
+                Split( row );
+            }
 		}
 		io.WriteRow( row );
 	}
-
-
 	return 0;
 }
 
@@ -261,11 +421,11 @@ int SplitChar :: Execute( ALib::CommandLine & cmd ) {
 	CSVRow row;
 
 	while( io.ReadCSV( row ) ) {
-		if ( Skip( row ) ) {
+		if ( Skip( io, row ) ) {
 			continue;
 		}
 
-		if ( ! Pass( row ) ) {
+		if ( ! Pass( io, row ) ) {
 			if ( mTrans == stNone ) {
 				Split( row );
 			}

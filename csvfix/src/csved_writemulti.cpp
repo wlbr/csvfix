@@ -66,7 +66,7 @@ int WriteMultiCommand :: Execute( ALib::CommandLine & cmd ) {
     CSVRow row, master;
     bool haveout = false;
     while( io.ReadCSV( row ) ) {
-		if ( Skip( row ) ) {
+		if ( Skip( io, row ) ) {
 			continue;
 		}
         if ( GetNewMaster( row, master )) {    // new master
@@ -175,7 +175,7 @@ void WriteMultiCommand :: ProcessFlags( const ALib::CommandLine & cmd ) {
 	CommaListToIndex( dl, mDetail );
 
     mHaveRecSep = cmd.HasFlag( FLAG_RECSEP );
-    mRecSep = cmd.GetValue( FLAG_RECSEP, "" );
+    mRecSep = ALib::UnEscape( cmd.GetValue( FLAG_RECSEP, "" ) );
 
 }
 

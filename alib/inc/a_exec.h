@@ -24,7 +24,7 @@ class Executor {
 		Executor( const std::string & cmd = "" );
 		~Executor();
 
-		std::istream & Exec( const std::string & cmd = "" );
+		std::istream & Exec( const std::string & cmd = "", int ignorexit = 0 );
 
 	private:
 

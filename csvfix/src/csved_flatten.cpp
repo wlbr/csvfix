@@ -87,7 +87,7 @@ int FlattenCommand :: MDFlatten( ALib::CommandLine & cmd ) {
 	e.Compile( mMasterExpr );
 
 	while( io.ReadCSV( row ) ) {
-		if ( Skip( row ) ) {
+		if ( Skip( io, row ) ) {
 			continue;
 		}
 		AddVars( e, io, row );
@@ -127,7 +127,7 @@ int FlattenCommand :: Execute( ALib::CommandLine & cmd ) {
 	int read = 0;
 
 	while( io.ReadCSV( row ) ) {
-		if ( Skip( row ) ) {
+		if ( Skip( io, row ) ) {
 			continue;
 		}
 		string key = MakeKey( row );

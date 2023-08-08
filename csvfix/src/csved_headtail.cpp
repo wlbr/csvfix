@@ -104,7 +104,7 @@ int HeadCommand :: Execute( ALib::CommandLine & cmd ) {
 
 	unsigned int nr = 0;
 	while( io.ReadCSV( row ) ) {
-		if ( ! Skip( row ) ) {
+		if ( ! Skip( io, row ) ) {
 			if ( ++nr > mRecords ) {
 				break;
 			}
@@ -126,7 +126,7 @@ int TailCommand :: Execute( ALib::CommandLine & cmd ) {
 	CSVRow row;
 
 	while( io.ReadCSV( row ) ) {
-		if ( ! Skip( row ) ) {
+		if ( ! Skip( io, row ) ) {
 			mLastRows.push_back( row );
 			if ( mLastRows.size() > mRecords ) {
 				mLastRows.pop_front();

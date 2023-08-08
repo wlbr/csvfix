@@ -11,8 +11,9 @@
 
 #include "a_base.h"
 #include "csved_command.h"
-#include "a_dict.h"
 #include <fstream>
+#include <map>
+#include <string>
 
 namespace CSVED {
 
@@ -36,7 +37,7 @@ class FileSplitCommand : public Command {
 		std::string MakeKey( const CSVRow & row );
 
 		std::string mDir, mFilePrefix, mFileExt, mCurrentFile;
-		ALib::Dictionary <std::string> mDict;
+        std::map <std::string, std::string> mDict;
 		std::vector <unsigned int> mColIndex;
 		unsigned int mFileNo;
 		std::ofstream mOutFile;

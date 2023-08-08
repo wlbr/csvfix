@@ -1,1 +1,2 @@
-$CSVED check data/names.csv 
+$CSVED check -v data/names.csv 
+$CSVED check -v data/birthdays.csv 

@@ -1,0 +1,2 @@
+$CSVED erase -r 'foo' data/erase.csv
+$CSVED erase -r '[0-9]' data/erase.csv

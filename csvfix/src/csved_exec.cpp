@@ -36,6 +36,8 @@ const char * const EXEC_HELP = {
 	"where flags are:\n"
 	"  -c cmd\tcommand line to execute\n"
 	"  -r\t\treplace CSV input with command output\n"
+    "  -ix ecode\tignore exit codes from cmd with values less than or equal to ecode\n"
+    "  -d\t\tdebug mode - print expamded command but don't execute it\n"
 	"#ALL,SKIP,PASS"
 };
 
@@ -49,6 +51,8 @@ ExecCommand ::ExecCommand( const string & name,
 
 	AddFlag( ALib::CommandLineFlag( FLAG_CMD, true, 1 ) );
 	AddFlag( ALib::CommandLineFlag( FLAG_REPLACE, false, 0 ) );
+	AddFlag( ALib::CommandLineFlag( FLAG_DEBUG, false, 0 ) );
+	AddFlag( ALib::CommandLineFlag( FLAG_IGNOREX, false, 1 ) );
 }
 
 //---------------------------------------------------------------------------
@@ -59,22 +63,35 @@ ExecCommand ::ExecCommand( const string & name,
 int ExecCommand :: Execute( ALib::CommandLine & cmd ) {
 
 	GetSkipOptions( cmd );
+
 	mCmdLine = cmd.GetValue( FLAG_CMD, "" );
 	if ( ALib::IsEmpty( mCmdLine ) ) {
 		CSVTHROW( "Empty command" );
 	}
+
 	bool csv = ! cmd.HasFlag( FLAG_REPLACE );
+    bool debug = cmd.HasFlag( FLAG_DEBUG );
+
+    string ix = cmd.GetValue( FLAG_IGNOREX, "0" );
+    if ( ! ALib::IsInteger( ix ) ) {
+        CSVTHROW( "Invalid value for " << FLAG_IGNOREX << ": " << ix );
+    }
+    int nix = ALib::ToInteger( ix );
 
 	IOManager io( cmd );
 	CSVRow row;
 	ALib::Executor ex;
 
 	while( io.ReadCSV( row ) ) {
-		if ( Skip( row ) ) {
+		if ( Skip( io, row ) ) {
 			continue;
 		}
 		string cmd = MakeCmd( row );
-		std::istream & is = ex.Exec( cmd );
+        if ( debug ) {
+            std::cout << cmd << "\n";
+            continue;
+        }
+		std::istream & is = ex.Exec( cmd, nix );
 		if ( ! is ) {
 			CSVTHROW( "Command execution error" );
 		}
@@ -85,7 +102,7 @@ int ExecCommand :: Execute( ALib::CommandLine & cmd ) {
 		while( std::getline( is, line ) ) {
 			if ( csv ) {
 				CSVRow tmp( row ), cmdout;
-				if ( ! Pass( tmp ) ) {
+				if ( ! Pass( io, tmp ) ) {
 					clp.Parse( line, cmdout );
 					ALib::operator+=( tmp, cmdout );
 					io.WriteRow( tmp );

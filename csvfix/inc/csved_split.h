@@ -10,7 +10,9 @@
 #define INC_CSVED_SPLIT_H
 
 #include "a_base.h"
+#include "a_regex.h"
 #include "csved_command.h"
+#include <vector>
 
 namespace CSVED {
 
@@ -43,6 +45,26 @@ class SplitBase : public Command {
 		bool mKeep;
 };
 
+//----------------------------------------------------------------------------
+// Split using regular expressions.
+//----------------------------------------------------------------------------
+
+class SplitRegex : public SplitBase {
+
+	public:
+
+		SplitRegex( const std::string & name,
+						const std::string & desc );
+
+		int Execute( ALib::CommandLine & cmd );
+
+	private:
+
+        void Split( CSVRow & row );
+        ALib::RegEx mRegex;
+};
+
+
 //---------------------------------------------------------------------------
 // Split at fixed positions
 //---------------------------------------------------------------------------
@@ -59,12 +81,17 @@ class SplitFixed : public SplitBase {
 	private:
 
 		void CreatePositions( const std::string & ps );
+		void CreateLengths( const std::string & ls );
+
 		void AddPosition( const std::string & spos,
 							const std::string & slen );
 		void Split( CSVRow & row );
+		void SplitLengths( CSVRow & row );
+
 
 		typedef std::vector <std::pair<unsigned int,unsigned int> > PairVec;
 		PairVec mPositions;
+		std::vector <int> mLengths;
 };
 
 //---------------------------------------------------------------------------

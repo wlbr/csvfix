@@ -492,6 +492,9 @@ string Squeeze( const string & s, const string & out ) {
 //------------------------------------------------------------------------
 
 bool IsNumber( const std::string & s ) {
+    if ( IsEmpty( s ) ) {
+        return false;
+    }
 	char * p;
 	double d = strtod( s.c_str(), & p );
 	if ( fabs( d ) == HUGE_VAL ) {			// too big?
@@ -507,6 +510,9 @@ bool IsNumber( const std::string & s ) {
 //------------------------------------------------------------------------
 
 bool IsInteger( const std::string & s ) {
+    if ( IsEmpty( s ) ) {
+        return false;
+    }
 	char * p;
 	long n = strtol( s.c_str(), & p, 10 );		// base 10 conversion
 	if ( n == LONG_MAX || n == LONG_MIN ) {		// too big?

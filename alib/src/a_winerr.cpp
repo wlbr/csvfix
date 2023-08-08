@@ -12,8 +12,6 @@
 
 namespace ALib {
 
-#ifdef ALIB_WINAPI
-
 std::string WinErrorToStr( DWORD ec ) {
 
 	char * lpMsgBuf;
@@ -65,10 +63,6 @@ DEFTEST( ErrMsgTest ) {
 //----------------------------------------------------------------------------
 
 
-#endif
-
-
-//----------------------------------------------------------------------------
 
 
 

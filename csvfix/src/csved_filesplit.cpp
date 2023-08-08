@@ -11,6 +11,9 @@
 #include "csved_strings.h"
 #include "a_collect.h"
 
+
+#include <iostream>
+
 using std::string;
 using std::vector;
 
@@ -80,10 +83,10 @@ int FileSplitCommand :: Execute( ALib::CommandLine & cmd ) {
 	CSVRow row;
 
 	while( io.ReadCSV( row ) ) {
-		if ( Skip( row ) ) {
+		if ( Skip( io, row ) ) {
 			continue;
 		}
-		if ( Pass( row ) ) {
+		if ( Pass( io, row ) ) {
 			io.WriteRow( row  );
 		}
 		else {
@@ -121,11 +124,11 @@ string FileSplitCommand :: MakeKey( const CSVRow & row ) {
 void FileSplitCommand :: WriteRow( IOManager & ioman, const CSVRow & row ) {
 
 	string key = MakeKey( row );
-	const string * p = mDict.GetPtr( key );
-	string fname = (p == 0) ? NewFileName( key ) : * p;
+    auto it = mDict.find( key );
+	string fname = (it == mDict.end()) ? NewFileName( key ) : it->second;
 
-	if ( p == 0 ) {
-		mDict.Add( key, fname );
+	if ( it == mDict.end() ) {
+        mDict[key] = fname;
 	}
 
 	if ( fname != mCurrentFile ) {

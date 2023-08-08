@@ -265,7 +265,7 @@ int DSVWriteCommand :: Execute( ALib::CommandLine & cmd ) {
 	CSVRow row;
 
 	while( io.ReadCSV( row ) ) {
-		if ( ! Skip( row ) ) {
+		if ( ! Skip( io, row ) ) {
 			io.Out() << MakeDSV( row ) << "\n";
 		}
 	}

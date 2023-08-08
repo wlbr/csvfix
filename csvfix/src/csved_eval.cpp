@@ -68,10 +68,10 @@ int EvalCommand ::	Execute( ALib::CommandLine & cmd ) {
 	GetExpressions( cmd );
 
 	while( io.ReadCSV( row ) ) {
-		if ( Skip( row ) ) {
+		if ( Skip( io, row ) ) {
 			continue;
 		}
-		if ( ! Pass( row ) ) {
+		if ( ! Pass( io, row ) ) {
 			SetParams( row, io );
 			if ( mDiscardInput ) {
 				row.clear();

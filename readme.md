@@ -15,7 +15,7 @@ Neil Butterworth
 
 -----
 
-The wonderful CSVfix tool was written by Neil Butterworth, but unfortunately is seems to be _orphaned_. There 
+The wonderful CSVfix tool was written by Neil Butterworth, but unfortunately it seems to be _orphaned_. There 
 is an archived [repository on Google Code](https://code.google.com/archive/p/csvfix/) (version 1.5). Its readme 
 points to a [version 1.6 on Bitbucket](http://neilb.bitbucket.org/csvfix), but that link is dead. Neil does not 
 seem to be on Github.
